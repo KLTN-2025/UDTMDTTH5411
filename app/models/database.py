@@ -162,6 +162,7 @@ class VectorDatabase:
     
     def save_index(self, filepath: str):
         faiss.write_index(self.index, filepath)
+        # Save metadata mapping
         import json
         meta = {
             "product_ids": self.product_ids,
@@ -178,7 +179,7 @@ class VectorDatabase:
         with open(filepath + '.json', 'w') as f:
             json.dump(meta, f)
     
-    def load_index(self, filepath: str):    
+    def load_index(self, filepath: str):
         self.index = faiss.read_index(filepath)
         import json
         try:
