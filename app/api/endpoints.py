@@ -9,10 +9,8 @@ from typing import Dict, Any
 router = APIRouter()
 settings = get_settings()
 
-# Khởi tạo engine: ưu tiên engine chuẩn (FashionCLIP + FAISS), fallback sang Simple
 try:
-    # Import lazy để tránh lỗi import khi thiếu phụ thuộc nặng
-    from app.services.search_engine import FashionSearchEngine  # type: ignore
+    from app.services.search_engine import FashionSearchEngine
     search_engine = FashionSearchEngine()
 except Exception:
     search_engine = SimpleFashionSearchEngine()
@@ -135,11 +133,10 @@ async def search_similar_to_product(
 async def rebuild_index(force: bool = False):
     """Rebuild the vector index from database"""
     try:
-        # Gọi tương thích cả FashionSearchEngine (force_rebuild) và SimpleFashionSearchEngine (force)
         try:
-            search_engine.build_index(index_path=settings.index_path, force_rebuild=force)  # type: ignore[arg-type]
+            search_engine.build_index(index_path=settings.index_path, force_rebuild=force)
         except TypeError:
-            search_engine.build_index(index_path=settings.index_path, force=force)  # type: ignore[arg-type]
+            search_engine.build_index(index_path=settings.index_path, force=force)
         stats = search_engine.get_index_stats()
         return {"message": "Index rebuilt successfully", "stats": stats}
     except Exception as e:
@@ -160,7 +157,6 @@ async def get_sample_products(limit: int = Query(5, description="Number of sampl
     try:
         products = search_engine.get_sample_products(limit)
         
-        # Convert to response format
         response = []
         for product in products:
             response.append({
@@ -184,7 +180,6 @@ async def search_similar_to_text(
     try:
         results = search_engine.search_similar_products_by_text(query, k)
         
-        # Convert to response model
         response = []
         for product in results:
             response.append(ProductResponse(
@@ -210,7 +205,6 @@ async def search_by_text(
     try:
         results = search_engine.search_products_by_text(query, k)
         
-        # Convert to response format
         response = []
         for product in results:
             response.append({

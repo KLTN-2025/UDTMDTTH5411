@@ -1,6 +1,3 @@
-"""
-Simple database classes that bypass FAISS dependencies for testing
-"""
 import numpy as np
 import json
 import os
@@ -13,7 +10,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 class SimpleVectorDatabase:
-    """Simple vector database using numpy for testing"""
     
     def __init__(self, dimension: int = 512):
         self.dimension = dimension
@@ -22,7 +18,6 @@ class SimpleVectorDatabase:
         logger.info(f"SimpleVectorDatabase initialized with dimension {dimension}")
     
     def add_vectors(self, vectors: np.ndarray, product_ids: List[str]):
-        """Add vectors to the database"""
         if len(vectors) == 0:
             return
         
@@ -36,23 +31,19 @@ class SimpleVectorDatabase:
                 self.product_ids.append(product_ids[i] if i < len(product_ids) else f"product_{len(self.vectors)}")
     
     def search(self, query_vector: np.ndarray, k: int = 10) -> tuple:
-        """Search for similar vectors"""
         if len(self.vectors) == 0:
             return np.array([]), np.array([])
         
         vectors = np.array(self.vectors)
         query_vector = query_vector.reshape(1, -1)
         
-        # Calculate cosine similarity
         similarities = np.dot(vectors, query_vector.T).flatten()
         
-        # Get top k indices
         top_indices = np.argsort(similarities)[::-1][:k]
         
         return similarities[top_indices], top_indices
     
     def save(self, filepath: str):
-        """Save vectors to file"""
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         
         data = {
@@ -67,7 +58,6 @@ class SimpleVectorDatabase:
         logger.info(f"Saved {len(self.vectors)} vectors to {filepath}")
     
     def load(self, filepath: str):
-        """Load vectors from file"""
         if not os.path.exists(filepath):
             logger.warning(f"File {filepath} does not exist")
             return
@@ -82,7 +72,6 @@ class SimpleVectorDatabase:
         logger.info(f"Loaded {len(self.vectors)} vectors from {filepath}")
     
     def get_stats(self) -> Dict[str, Any]:
-        """Get database statistics"""
         return {
             'total_vectors': len(self.vectors),
             'dimension': self.dimension,
@@ -90,7 +79,6 @@ class SimpleVectorDatabase:
         }
 
 class SimpleMongoDBManager:
-    """Simple MongoDB manager for testing"""
     
     def __init__(self, mongo_uri: str, db_name: str, collection_name: str):
         self.mongo_uri = mongo_uri
@@ -109,9 +97,7 @@ class SimpleMongoDBManager:
             logger.error(f"Failed to connect to MongoDB: {e}")
     
     def get_products_with_images(self, limit: Optional[int] = None) -> List[Dict[str, Any]]:
-        """Get products that have images"""
         try:
-            # Query for products that have images array with at least one element
             query = {"images": {"$exists": True, "$not": {"$size": 0}}}
             cursor = self.collection.find(query)
             
@@ -126,7 +112,6 @@ class SimpleMongoDBManager:
             return []
     
     def get_product_by_id(self, product_id: str) -> Optional[Dict[str, Any]]:
-        """Get product by ID"""
         try:
             if isinstance(product_id, str) and len(product_id) == 24:
                 product_id = ObjectId(product_id)
@@ -136,6 +121,5 @@ class SimpleMongoDBManager:
             return None
     
     def close(self):
-        """Close MongoDB connection"""
         if self.client:
             self.client.close()

@@ -1,6 +1,3 @@
-"""
-Simple search engine that bypasses problematic dependencies
-"""
 import numpy as np
 import os
 import logging
@@ -18,7 +15,6 @@ logger = logging.getLogger(__name__)
 settings = get_settings()
 
 class SimpleFashionSearchEngine:
-    """Simple search engine for testing without FashionCLIP/FAISS dependencies"""
     
     def __init__(self, mongo_uri: str = None, db_name: str = None, 
                  collection_name: str = None, embedder_model: str = None):
@@ -38,11 +34,9 @@ class SimpleFashionSearchEngine:
     
     def build_index(self, force: bool = False, index_path: str = None, 
                    batch_size: int = None) -> Dict[str, Any]:
-        """Build search index"""
         index_path = index_path or settings.index_path
         batch_size = batch_size or settings.batch_size
         
-        # Check if index exists and not forcing rebuild
         if os.path.exists(index_path) and not force:
             logger.info(f"Index already exists at {index_path}. Use --force to rebuild.")
             return self.get_index_stats()
@@ -50,7 +44,6 @@ class SimpleFashionSearchEngine:
         logger.info("Building search index...")
         start_time = time.time()
         
-        # Get products with images
         products = self.mongo_manager.get_products_with_images()
         if not products:
             logger.error("No products found with images")
@@ -58,7 +51,6 @@ class SimpleFashionSearchEngine:
         
         logger.info(f"Processing {len(products)} products...")
         
-        # Process products in batches
         all_vectors = []
         all_product_ids = []
         
@@ -67,11 +59,9 @@ class SimpleFashionSearchEngine:
             
             for product in batch:
                 try:
-                    # Get first image URL
                     if 'images' in product and product['images']:
                         image_url = product['images'][0]
                         
-                        # Create dummy features (random vector)
                         features = self.embedder.extract_features(None)
                         all_vectors.append(features)
                         all_product_ids.append(str(product['_id']))
@@ -84,14 +74,11 @@ class SimpleFashionSearchEngine:
             logger.error("No vectors generated")
             return {"error": "No vectors generated"}
         
-        # Add vectors to database
         self.vector_db.add_vectors(np.array(all_vectors), all_product_ids)
         
-        # Save index as JSON
         json_path = index_path.replace('.faiss', '.json')
         self.vector_db.save(json_path)
         
-        # Build metadata
         metadata = {
             'total_products': len(all_vectors),
             'dimension': settings.feature_dimension,
@@ -113,10 +100,8 @@ class SimpleFashionSearchEngine:
         }
     
     def load_index(self, index_path: str = None) -> bool:
-        """Load existing index"""
         index_path = index_path or settings.index_path
         
-        # Try to load from JSON file (our simple format)
         json_path = index_path.replace('.faiss', '.json')
         if os.path.exists(json_path):
             try:
@@ -126,7 +111,6 @@ class SimpleFashionSearchEngine:
             except Exception as e:
                 logger.error(f"Failed to load JSON index: {e}")
         
-        # Fallback: try FAISS format
         if os.path.exists(index_path):
             try:
                 self.vector_db.load(index_path)
@@ -139,12 +123,9 @@ class SimpleFashionSearchEngine:
         return False
     
     def search_by_image_url(self, image_url: str, k: int = 10) -> List[Dict[str, Any]]:
-        """Search by image URL"""
         try:
-            # Create dummy query vector
             query_vector = self.embedder.extract_features(None)
             
-            # Search in vector database
             similarities, indices = self.vector_db.search(query_vector, k)
             
             results = []
@@ -167,12 +148,9 @@ class SimpleFashionSearchEngine:
             return []
     
     def search_by_text(self, text: str, k: int = 10) -> List[Dict[str, Any]]:
-        """Search by text query"""
         try:
-            # Encode text to vector
             query_vector = self.embedder.encode_text(text)
             
-            # Search in vector database
             similarities, indices = self.vector_db.search(query_vector, k)
             
             results = []
@@ -195,9 +173,7 @@ class SimpleFashionSearchEngine:
             return []
     
     def get_similar_products(self, product_id: str, k: int = 10) -> List[Dict[str, Any]]:
-        """Get similar products to a given product"""
         try:
-            # Find the product's vector
             product_idx = None
             for i, pid in enumerate(self.vector_db.product_ids):
                 if pid == product_id:
@@ -208,10 +184,8 @@ class SimpleFashionSearchEngine:
                 logger.warning(f"Product {product_id} not found in index")
                 return []
             
-            # Get the product's vector
             query_vector = self.vector_db.vectors[product_idx]
             
-            # Search for similar products (excluding the product itself)
             similarities, indices = self.vector_db.search(query_vector, k + 1)
             
             results = []
@@ -234,18 +208,14 @@ class SimpleFashionSearchEngine:
             return []
     
     def search_similar_products_from_bytes(self, image_bytes: bytes, k: int = 10) -> List[Dict[str, Any]]:
-        """Search similar products from image bytes"""
         try:
             from PIL import Image
             from io import BytesIO
             
-            # Convert bytes to PIL Image
             image = Image.open(BytesIO(image_bytes)).convert('RGB')
             
-            # Extract features using simple embedder
             query_vector = self.embedder.extract_features(image)
             
-            # Search in vector database
             similarities, indices = self.vector_db.search(query_vector, k)
             
             results = []
@@ -262,7 +232,7 @@ class SimpleFashionSearchEngine:
                             "description": product.get("description", ""),
                             "images": product.get("images", []),
                             "similarity_score": float(sim),
-                            "distance": 1.0 - float(sim)  # Convert similarity to distance
+                            "distance": 1.0 - float(sim)
                         })
             
             return results
@@ -272,12 +242,9 @@ class SimpleFashionSearchEngine:
             return []
     
     def search_similar_products_by_text(self, query: str, k: int = 10) -> List[Dict[str, Any]]:
-        """Search similar products by text query"""
         try:
-            # Encode text to vector
             query_vector = self.embedder.encode_text(query)
             
-            # Search in vector database
             similarities, indices = self.vector_db.search(query_vector, k)
             
             results = []
@@ -304,5 +271,4 @@ class SimpleFashionSearchEngine:
             return []
     
     def get_index_stats(self) -> Dict[str, Any]:
-        """Get index statistics"""
         return self.vector_db.get_stats()
