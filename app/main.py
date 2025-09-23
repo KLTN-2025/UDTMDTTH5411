@@ -31,8 +31,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-handel = Mangum(app)
-
 app.include_router(api_router, prefix="/api/v1")
 
 @app.get("/")
