@@ -4,3 +4,5 @@ venv/
 data/indices/
 .DS_Store
 __pycache__/
+.vercel
+.git
