@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Image Search - Client Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FFC2D1 0%, #FFB3C6 50%, #FF8FAB 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #FB6F92 0%, #FF8FAB 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .search-section {
+            background: #F8F9FA;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 2px solid #E9ECEF;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        input[type="url"], input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #DEE2E6;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="url"]:focus, input[type="number"]:focus {
+            outline: none;
+            border-color: #FB6F92;
+            box-shadow: 0 0 0 3px rgba(251, 111, 146, 0.1);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #FB6F92 0%, #FF8FAB 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(251, 111, 146, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #6C757D 0%, #868E96 100%);
+        }
+
+        .btn-secondary:hover {
+            box-shadow: 0 10px 20px rgba(108, 117, 125, 0.3);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: #FB6F92;
+            font-weight: 600;
+        }
+
+        .spinner {
+            border: 3px solid #F3F3F3;
+            border-top: 3px solid #FB6F92;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .results h3 {
+            color: #495057;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #E9ECEF;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #F8F9FA;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-name {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            line-height: 1.3;
+        }
+
+        .product-price {
+            color: #FB6F92;
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+
+        .similarity-score {
+            background: linear-gradient(135deg, #D9F7BE 0%, #B7EB8F 100%);
+            color: #2F5233;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .product-description {
+            color: #6C757D;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        .error {
+            background: #F8D7DA;
+            color: #721C24;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #F5C6CB;
+        }
+
+        .sample-products {
+            margin-top: 30px;
+        }
+
+        .sample-products h3 {
+            color: #495057;
+            margin-bottom: 15px;
+        }
+
+        .sample-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .sample-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            border: 2px solid #E9ECEF;
+        }
+
+        .sample-card:hover {
+            transform: translateY(-3px);
+            border-color: #FB6F92;
+        }
+
+        .sample-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .sample-info {
+            padding: 10px;
+        }
+
+        .sample-name {
+            font-weight: 600;
+            color: #495057;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .sample-price {
+            color: #FB6F92;
+            font-weight: 600;
+            font-size: 1em;
+        }
+
+        .stats {
+            background: #E3F2FD;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #BBDEFB;
+        }
+
+        .stats h4 {
+            color: #1976D2;
+            margin-bottom: 10px;
+        }
+
+        .stats-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            color: #424242;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛍️ Fashion Image Search</h1>
+            <p>Tìm kiếm sản phẩm tương tự dựa trên hình ảnh</p>
+        </div>
+
+        <div class="content">
+            <!-- Stats Section -->
+            <div class="stats" id="stats">
+                <h4>📊 Thống kê hệ thống</h4>
+                <div id="stats-content">
+                    <div class="stats-item">
+                        <span>Trạng thái:</span>
+                        <span id="index-status">Đang tải...</span>
+                    </div>
+                    <div class="stats-item">
+                        <span>Số sản phẩm:</span>
+                        <span id="product-count">-</span>
+                    </div>
+                    <div class="stats-item">
+                        <span>Database:</span>
+                        <span id="database-name">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search by Upload Section -->
+            <div class="search-section">
+                <h3 style="margin-bottom: 20px; color: #495057;">🔍 Tìm kiếm sản phẩm tương tự bằng ảnh (upload)</h3>
+
+                <div class="form-group">
+                    <label for="imageFile">Chọn ảnh:</label>
+                    <input type="file" id="imageFile" accept="image/*" onchange="previewUploadedImage()">
+                </div>
+
+                <div id="imagePreview" style="display: none; margin-top: 10px;">
+                    <label>Ảnh đã chọn:</label>
+                    <div style="margin-top: 8px;">
+                        <img id="previewImg" style="max-width: 200px; max-height: 200px; border-radius: 8px; border: 2px solid #E9ECEF;" />
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 16px;">
+                    <label for="resultCount">Số kết quả (1-20):</label>
+                    <input type="number" id="resultCount" value="5" min="1" max="20">
+                </div>
+
+                <button class="btn" onclick="searchByUpload()">🖼️ Tìm theo ảnh (upload)</button>
+                <button class="btn btn-secondary" onclick="loadSampleProducts()">📋 Xem sản phẩm mẫu</button>
+            </div>
+
+            <!-- Loading -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <div>Đang xử lý...</div>
+            </div>
+
+            <!-- Error -->
+            <div class="error" id="error" style="display: none;"></div>
+
+            <!-- Results / Chat -->
+            <div class="results" id="results">
+                <h3>🎯 Gợi ý</h3>
+                <div id="chatAnswer" style="margin-bottom: 12px; color: #424242;"></div>
+                <div class="product-grid" id="productGrid"></div>
+            </div>
+
+            <!-- Sample Products -->
+            <div class="sample-products" id="sampleProducts" style="display: none;">
+                <h3>📋 Sản phẩm mẫu (click để tìm kiếm tương tự)</h3>
+                <div class="sample-grid" id="sampleGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000/api/v1';
+
+        // Load stats on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStats();
+        });
+
+        async function loadStats() {
+            try {
+                console.log('Loading stats from:', `${API_BASE}/index/stats`);
+                const response = await fetch(`${API_BASE}/index/stats`);
+                console.log('Stats response status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const stats = await response.json();
+                console.log('Stats data:', stats);
+                
+                document.getElementById('index-status').textContent = 
+                    stats.total_vectors > 0 ? '✅ Đã sẵn sàng' : '❌ Chưa sẵn sàng';
+                document.getElementById('product-count').textContent = stats.total_vectors || 0;
+                document.getElementById('database-name').textContent = 'fashion-video-app-stg';
+            } catch (error) {
+                console.error('Error loading stats:', error);
+                document.getElementById('index-status').textContent = '❌ Lỗi kết nối';
+                document.getElementById('product-count').textContent = '0';
+                document.getElementById('database-name').textContent = '-';
+            }
+        }
+
+        function previewUploadedImage() {
+            const fileInput = document.getElementById('imageFile');
+            const previewDiv = document.getElementById('imagePreview');
+            const previewImg = document.getElementById('previewImg');
+            
+            if (fileInput.files && fileInput.files[0]) {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;
+                    previewDiv.style.display = 'block';
+                };
+                
+                reader.readAsDataURL(file);
+            } else {
+                previewDiv.style.display = 'none';
+            }
+        }
+
+        async function sendChat() {
+            const query = document.getElementById('chatInput').value.trim();
+            const resultCount = parseInt(document.getElementById('resultCount').value);
+            if (!query) {
+                showError('Vui lòng nhập nội dung cần tư vấn');
+                return;
+            }
+            showLoading();
+            hideError();
+            hideResults();
+            try {
+                const response = await fetch(`${API_BASE}/chat`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: query, k: resultCount })
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                displayChatResults(data);
+            } catch (error) {
+                console.error('Chat error:', error);
+                showError(`Lỗi tư vấn: ${error.message}`);
+            } finally {
+                hideLoading();
+            }
+        }
+
+        async function searchByUpload() {
+            const imageFile = document.getElementById('imageFile').files[0];
+            const resultCount = parseInt(document.getElementById('resultCount').value);
+            if (!imageFile) {
+                showError('Vui lòng chọn một ảnh để tải lên');
+                return;
+            }
+            showLoading();
+            hideError();
+            hideResults();
+            try {
+                console.log('Uploading image:', imageFile.name, 'Size:', imageFile.size);
+                const formData = new FormData();
+                formData.append('file', imageFile);
+                formData.append('k', resultCount.toString());
+                
+                console.log('Sending request to:', `${API_BASE}/search/similar-to-image/upload`);
+                const response = await fetch(`${API_BASE}/search/similar-to-image/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                console.log('Upload response status:', response.status);
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('Upload error response:', errorText);
+                    throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+                }
+                
+                const products = await response.json();
+                console.log('Upload search results:', products);
+                // Với kết quả tìm theo ảnh, không có chat answer
+                document.getElementById('chatAnswer').textContent = '';
+                displayResults(products);
+            } catch (error) {
+                console.error('Upload search error:', error);
+                showError(`Lỗi tìm theo ảnh: ${error.message}`);
+            } finally {
+                hideLoading();
+            }
+        }
+
+        async function loadSampleProducts() {
+            showLoading();
+            hideError();
+
+            try {
+                const response = await fetch(`${API_BASE}/products/sample?limit=8`);
+                const products = await response.json();
+                displaySampleProducts(products);
+
+            } catch (error) {
+                console.error('Error loading samples:', error);
+                showError(`Lỗi tải sản phẩm mẫu: ${error.message}`);
+            } finally {
+                hideLoading();
+            }
+        }
+
+        function displayResults(products) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+
+            if (products.length === 0) {
+                grid.innerHTML = '<p style="text-align: center; color: #6C757D; padding: 20px;">Không tìm thấy sản phẩm tương tự</p>';
+            } else {
+                products.forEach(product => {
+                    const card = createProductCard(product);
+                    grid.appendChild(card);
+                });
+            }
+
+            showResults();
+        }
+
+        function displayChatResults(data) {
+            const { answer, citations } = data || { answer: '', citations: [] };
+            const answerDiv = document.getElementById('chatAnswer');
+            answerDiv.textContent = answer || '';
+            displayResults(citations || []);
+        }
+
+        function displaySampleProducts(products) {
+            const grid = document.getElementById('sampleGrid');
+            grid.innerHTML = '';
+
+            products.forEach(product => {
+                const card = createSampleCard(product);
+                grid.appendChild(card);
+            });
+
+            document.getElementById('sampleProducts').style.display = 'block';
+        }
+
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+
+            const imageUrl = product.images && product.images.length > 0 ? product.images[0] : '';
+            const similarityPercent = Math.round(product.similarity_score * 100);
+
+            card.innerHTML = `
+                <img src="${imageUrl}" alt="${product.name}" class="product-image" 
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjhGOUZBIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzlDQTNBRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5vIEltYWdlPC90ZXh0Pjwvc3ZnPg=='">
+                <div class="product-info">
+                    <div class="product-name">${product.name || 'Không có tên'}</div>
+                    <div class="product-price">${formatPrice(product.price)}</div>
+                    <div class="similarity-score">Độ tương tự: ${similarityPercent}%</div>
+                    <div class="product-description">${product.description || 'Không có mô tả'}</div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        function createSampleCard(product) {
+            const card = document.createElement('div');
+            card.className = 'sample-card';
+            card.onclick = () => {
+                const suggest = `${product.name || ''}`.trim();
+                const input = document.getElementById('chatInput');
+                input.value = suggest;
+                sendChat();
+            };
+
+            const imageUrl = product.images && product.images.length > 0 ? product.images[0] : '';
+
+            card.innerHTML = `
+                <img src="${imageUrl}" alt="${product.name}" class="sample-image"
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjhGOUZBIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzlDQTNBRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5vIEltYWdlPC90ZXh0Pjwvc3ZnPg=='">
+                <div class="sample-info">
+                    <div class="sample-name">${product.name || 'Không có tên'}</div>
+                    <div class="sample-price">${formatPrice(product.price)}</div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        function formatPrice(price) {
+            if (!price || price === 0) return 'Liên hệ';
+            return new Intl.NumberFormat('vi-VN', {
+                style: 'currency',
+                currency: 'VND'
+            }).format(price);
+        }
+
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        function hideError() {
+            document.getElementById('error').style.display = 'none';
+        }
+
+        function showResults() {
+            document.getElementById('results').style.display = 'block';
+        }
+
+        function hideResults() {
+            document.getElementById('results').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

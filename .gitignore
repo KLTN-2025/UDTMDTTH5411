@@ -1,0 +1,6 @@
+venv310/ 
+venv/
+.env
+data/indices/
+.DS_Store
+__pycache__/
