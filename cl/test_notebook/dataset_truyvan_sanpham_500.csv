@@ -1,0 +1,501 @@
+﻿id,text
+1,Gợi ý cho tôi vài mẫu áo croptop dành cho nữ giá dao động quanh 1 triệu.
+2,Gợi ý cho tôi vài mẫu quần jean dài tay giá dao động quanh 1 triệu.
+3,Tôi muốn xem đầm dành cho nam giá khoảng dưới 500 nghìn.
+4,Hãy tìm cho tôi quần jean mặc mùa hè giá trong khoảng 1 đến 2 triệu.
+5,Tôi muốn mua áo vest dành cho nữ khoảng tầm 3 triệu.
+6,Gợi ý cho tôi vài mẫu giày cao gót form ôm giá trên dưới 1 triệu.
+7,Tìm áo blouse mặc đi chơi giá tầm 3 triệu giúp tôi.
+8,Tôi muốn mua áo sơ mi form rộng khoảng tầm 1 triệu rưỡi.
+9,Gợi ý cho tôi vài mẫu áo blouse mặc mùa đông giá dưới 1 triệu.
+10,Tôi muốn mua quần short mặc mùa đông khoảng dao động quanh 1 triệu.
+11,Tôi muốn xem áo len unisex giá khoảng dưới 1 triệu.
+12,Tìm giúp tôi áo sơ mi mặc đi làm giá tầm 3 triệu.
+13,Cho tôi vài lựa chọn áo hoodie dành cho nam giá dưới 500 nghìn.
+14,Tôi muốn mua áo croptop form ôm khoảng tầm 3 triệu.
+15,Hãy tìm cho tôi quần short mặc đi làm giá khoảng 700 nghìn.
+16,Có áo len unisex nào giá dưới 1 triệu không?
+17,Cho tôi xem áo khoác form rộng tầm giá xấp xỉ 1 triệu.
+18,Có chân váy mặc mùa hè nào giá tầm 3 triệu không?
+19,Tôi cần tìm váy mặc mùa hè trong tầm giá xấp xỉ 1 triệu.
+20,Tìm giúp tôi quần jean mặc mùa hè giá khoảng 2 triệu.
+21,Tìm giúp tôi quần short form ôm giá xấp xỉ 1 triệu.
+22,Tìm áo thun mặc đi làm giá tầm 3 triệu giúp tôi.
+23,Cho tôi xem áo ba lỗ mặc mùa đông tầm giá tầm 800 nghìn.
+24,Cho tôi vài lựa chọn áo thun mặc đi chơi giá khoảng 2 triệu.
+25,Hãy tìm cho tôi giày sneaker mặc mùa hè giá tầm 1 triệu rưỡi.
+26,Tìm giúp tôi áo khoác mặc mùa đông giá dao động quanh 1 triệu.
+27,Tôi muốn mua áo khoác mặc mùa hè khoảng khoảng 2 triệu.
+28,Tôi cần tìm quần tây dành cho nam trong tầm giá trên dưới 1 triệu.
+29,Tôi cần tìm áo len unisex trong tầm giá tầm 1 triệu rưỡi.
+30,Tôi muốn mua giày cao gót khoảng tầm 1 triệu rưỡi.
+31,Cho tôi vài lựa chọn quần tây ngắn tay giá trong khoảng 1 đến 2 triệu.
+32,Tìm áo len dành cho nữ giá trong khoảng 1 đến 2 triệu giúp tôi.
+33,Hãy tìm cho tôi áo croptop giá tầm 3 triệu.
+34,Có áo cardigan form ôm nào giá dao động quanh 1 triệu không?
+35,Tôi cần tìm áo hoodie mặc mùa đông trong tầm giá khoảng 700 nghìn.
+36,Tìm áo hoodie dài tay giá tầm 1 triệu rưỡi giúp tôi.
+37,Tôi muốn mua quần jean dành cho nữ khoảng xấp xỉ 1 triệu.
+38,Tôi muốn mua giày da form rộng khoảng xấp xỉ 1 triệu.
+39,Cho tôi xem váy mặc mùa hè tầm giá tầm 3 triệu.
+40,Hãy tìm cho tôi áo len giá tầm 3 triệu.
+41,Tôi muốn xem giày cao gót ngắn tay giá khoảng tầm 3 triệu.
+42,Tôi muốn mua giày cao gót dài tay khoảng dưới 1 triệu.
+43,Gợi ý cho tôi vài mẫu váy form rộng giá dưới 1 triệu.
+44,Cho tôi xem giày sneaker ngắn tay tầm giá tầm 3 triệu.
+45,Cho tôi vài lựa chọn áo thun mặc đi làm giá tầm 3 triệu.
+46,Cho tôi xem áo croptop dành cho nam tầm giá tầm 1 triệu rưỡi.
+47,Có áo thun nào giá trong khoảng 1 đến 2 triệu không?
+48,Cho tôi xem đầm dành cho nam tầm giá tầm 800 nghìn.
+49,Tìm giúp tôi áo polo mặc đi chơi giá tầm 3 triệu.
+50,Tôi cần tìm quần tây unisex trong tầm giá dưới 500 nghìn.
+51,Tôi muốn mua áo sơ mi khoảng tầm 800 nghìn.
+52,Gợi ý cho tôi vài mẫu giày cao gót unisex giá khoảng 2 triệu.
+53,Tôi muốn mua áo polo dài tay khoảng dao động quanh 1 triệu.
+54,Tôi muốn xem áo hoodie giá khoảng dưới 1 triệu.
+55,Tìm đầm dài tay giá dưới 500 nghìn giúp tôi.
+56,Tìm giúp tôi áo len mặc đi chơi giá tầm 1 triệu rưỡi.
+57,Hãy tìm cho tôi quần short dành cho nữ giá dao động quanh 1 triệu.
+58,Gợi ý cho tôi vài mẫu áo len mặc mùa hè giá khoảng 700 nghìn.
+59,Có áo ba lỗ ngắn tay nào giá tầm 3 triệu không?
+60,Cho tôi xem áo vest mặc đi chơi tầm giá khoảng 2 triệu.
+61,Tôi muốn xem quần jean unisex giá khoảng dưới 1 triệu.
+62,Gợi ý cho tôi vài mẫu áo sơ mi mặc đi chơi giá xấp xỉ 1 triệu.
+63,Hãy tìm cho tôi chân váy giá khoảng 700 nghìn.
+64,Hãy tìm cho tôi áo polo form ôm giá khoảng 700 nghìn.
+65,Tôi cần tìm quần tây unisex trong tầm giá xấp xỉ 1 triệu.
+66,Tôi cần tìm áo polo dành cho nữ trong tầm giá tầm 800 nghìn.
+67,Tôi muốn mua áo croptop form ôm khoảng xấp xỉ 1 triệu.
+68,Có áo polo unisex nào giá dưới 500 nghìn không?
+69,Tôi muốn mua giày da form rộng khoảng dưới 1 triệu.
+70,Tôi cần tìm chân váy trong tầm giá khoảng 700 nghìn.
+71,Tìm áo thun mặc mùa đông giá xấp xỉ 1 triệu giúp tôi.
+72,Tôi cần tìm áo ba lỗ dành cho nam trong tầm giá dưới 1 triệu.
+73,Cho tôi xem áo thun mặc mùa đông tầm giá khoảng 2 triệu.
+74,Có áo hoodie form rộng nào giá dưới 1 triệu không?
+75,Hãy tìm cho tôi áo khoác mặc mùa hè giá tầm 3 triệu.
+76,Tôi muốn xem quần tây dài tay giá khoảng dưới 500 nghìn.
+77,Tôi muốn mua váy mặc mùa đông khoảng trên dưới 1 triệu.
+78,Tôi muốn mua quần short ngắn tay khoảng dưới 1 triệu.
+79,Gợi ý cho tôi vài mẫu áo blouse form ôm giá trong khoảng 1 đến 2 triệu.
+80,Tìm giúp tôi áo vest dành cho nam giá khoảng 700 nghìn.
+81,Gợi ý cho tôi vài mẫu áo vest ngắn tay giá khoảng 700 nghìn.
+82,Tôi cần tìm váy mặc mùa hè trong tầm giá tầm 3 triệu.
+83,Gợi ý cho tôi vài mẫu giày cao gót dành cho nữ giá xấp xỉ 1 triệu.
+84,Tìm áo hoodie mặc mùa hè giá trên dưới 1 triệu giúp tôi.
+85,Tôi cần tìm áo ba lỗ mặc đi chơi trong tầm giá tầm 800 nghìn.
+86,Tôi cần tìm áo hoodie form ôm trong tầm giá tầm 1 triệu rưỡi.
+87,Tôi cần tìm quần short mặc mùa đông trong tầm giá tầm 1 triệu rưỡi.
+88,Tôi muốn mua quần jean mặc đi làm khoảng dao động quanh 1 triệu.
+89,Cho tôi vài lựa chọn áo hoodie form ôm giá khoảng 700 nghìn.
+90,Cho tôi xem áo len dài tay tầm giá tầm 800 nghìn.
+91,Có áo ba lỗ form ôm nào giá tầm 3 triệu không?
+92,Hãy tìm cho tôi áo sơ mi mặc mùa hè giá dưới 1 triệu.
+93,Tôi muốn mua áo blouse form rộng khoảng dưới 1 triệu.
+94,Cho tôi xem áo sơ mi ngắn tay tầm giá tầm 3 triệu.
+95,Tôi cần tìm áo blouse dành cho nam trong tầm giá trong khoảng 1 đến 2 triệu.
+96,Tôi muốn mua quần tây ngắn tay khoảng trong khoảng 1 đến 2 triệu.
+97,Tôi muốn mua giày cao gót form rộng khoảng xấp xỉ 1 triệu.
+98,Tìm áo hoodie mặc đi làm giá khoảng 2 triệu giúp tôi.
+99,Tìm giúp tôi quần tây mặc đi chơi giá trong khoảng 1 đến 2 triệu.
+100,Tìm giúp tôi áo ba lỗ form ôm giá dưới 500 nghìn.
+101,Có áo cardigan dành cho nữ nào giá khoảng 2 triệu không?
+102,Tìm giúp tôi áo cardigan mặc mùa đông giá trong khoảng 1 đến 2 triệu.
+103,Có quần short mặc đi làm nào giá dưới 1 triệu không?
+104,Cho tôi xem áo vest ngắn tay tầm giá dao động quanh 1 triệu.
+105,Gợi ý cho tôi vài mẫu quần short form rộng giá xấp xỉ 1 triệu.
+106,Cho tôi xem giày cao gót dành cho nam tầm giá trong khoảng 1 đến 2 triệu.
+107,Hãy tìm cho tôi áo khoác form ôm giá trên dưới 1 triệu.
+108,Cho tôi xem áo hoodie form ôm tầm giá dao động quanh 1 triệu.
+109,Tôi muốn mua áo cardigan form rộng khoảng dưới 1 triệu.
+110,Tìm giúp tôi áo khoác mặc mùa đông giá khoảng 700 nghìn.
+111,Hãy tìm cho tôi quần jean ngắn tay giá khoảng 700 nghìn.
+112,Tôi cần tìm áo khoác unisex trong tầm giá tầm 800 nghìn.
+113,Tôi muốn xem đầm unisex giá khoảng khoảng 2 triệu.
+114,Tôi cần tìm chân váy dài tay trong tầm giá tầm 1 triệu rưỡi.
+115,Có áo hoodie form ôm nào giá tầm 800 nghìn không?
+116,Có giày da nào giá tầm 800 nghìn không?
+117,Tôi muốn mua quần jean khoảng khoảng 700 nghìn.
+118,Cho tôi vài lựa chọn quần jean mặc đi chơi giá khoảng 2 triệu.
+119,Tôi cần tìm áo croptop mặc mùa đông trong tầm giá trên dưới 1 triệu.
+120,Cho tôi xem quần tây ngắn tay tầm giá tầm 800 nghìn.
+121,Tôi muốn mua áo thun form rộng khoảng xấp xỉ 1 triệu.
+122,Gợi ý cho tôi vài mẫu giày sneaker dành cho nữ giá xấp xỉ 1 triệu.
+123,Tôi cần tìm áo sơ mi mặc đi làm trong tầm giá dao động quanh 1 triệu.
+124,Cho tôi vài lựa chọn quần tây form rộng giá tầm 3 triệu.
+125,Cho tôi xem áo polo tầm giá dưới 500 nghìn.
+126,Có áo polo nào giá tầm 3 triệu không?
+127,Hãy tìm cho tôi quần short dành cho nữ giá dao động quanh 1 triệu.
+128,Có áo croptop nào giá trong khoảng 1 đến 2 triệu không?
+129,Có giày da ngắn tay nào giá tầm 800 nghìn không?
+130,Tôi muốn mua áo ba lỗ dành cho nam khoảng tầm 3 triệu.
+131,Tìm giúp tôi áo ba lỗ unisex giá trên dưới 1 triệu.
+132,Tôi muốn mua giày da mặc mùa đông khoảng dưới 500 nghìn.
+133,Tìm giúp tôi áo khoác form rộng giá dao động quanh 1 triệu.
+134,Có quần tây mặc đi làm nào giá khoảng 2 triệu không?
+135,Tìm áo ba lỗ mặc mùa hè giá khoảng 700 nghìn giúp tôi.
+136,Tìm áo polo dài tay giá tầm 1 triệu rưỡi giúp tôi.
+137,Tìm áo cardigan unisex giá tầm 800 nghìn giúp tôi.
+138,Tôi muốn xem áo croptop dài tay giá khoảng dưới 1 triệu.
+139,Tìm giúp tôi áo polo mặc đi làm giá tầm 3 triệu.
+140,Hãy tìm cho tôi áo khoác form rộng giá trên dưới 1 triệu.
+141,Tôi cần tìm đầm mặc mùa hè trong tầm giá trong khoảng 1 đến 2 triệu.
+142,Tôi cần tìm áo croptop ngắn tay trong tầm giá khoảng 700 nghìn.
+143,Có đầm nào giá xấp xỉ 1 triệu không?
+144,Hãy tìm cho tôi áo khoác unisex giá tầm 3 triệu.
+145,Tôi muốn mua váy dài tay khoảng khoảng 2 triệu.
+146,Tìm giày da mặc mùa hè giá trên dưới 1 triệu giúp tôi.
+147,Tôi muốn mua đầm dành cho nữ khoảng tầm 1 triệu rưỡi.
+148,Hãy tìm cho tôi áo croptop unisex giá trên dưới 1 triệu.
+149,Gợi ý cho tôi vài mẫu chân váy mặc mùa hè giá xấp xỉ 1 triệu.
+150,Cho tôi vài lựa chọn áo sơ mi mặc mùa đông giá tầm 800 nghìn.
+151,Tôi cần tìm áo thun mặc đi làm trong tầm giá trên dưới 1 triệu.
+152,Cho tôi xem áo len dài tay tầm giá khoảng 2 triệu.
+153,Tìm giúp tôi giày cao gót unisex giá trên dưới 1 triệu.
+154,Gợi ý cho tôi vài mẫu áo khoác mặc đi chơi giá dưới 1 triệu.
+155,Tìm giúp tôi chân váy mặc đi làm giá tầm 3 triệu.
+156,Tôi muốn xem đầm mặc mùa đông giá khoảng dưới 1 triệu.
+157,Tôi muốn mua áo khoác form rộng khoảng dưới 1 triệu.
+158,Tôi cần tìm áo vest dành cho nữ trong tầm giá dưới 1 triệu.
+159,Cho tôi vài lựa chọn áo sơ mi form rộng giá tầm 1 triệu rưỡi.
+160,Hãy tìm cho tôi áo polo mặc mùa hè giá trong khoảng 1 đến 2 triệu.
+161,Tìm áo blouse unisex giá tầm 3 triệu giúp tôi.
+162,Tìm giúp tôi áo blouse mặc mùa đông giá khoảng 2 triệu.
+163,Có giày da ngắn tay nào giá xấp xỉ 1 triệu không?
+164,Hãy tìm cho tôi giày sneaker form ôm giá trong khoảng 1 đến 2 triệu.
+165,Tìm giúp tôi áo khoác dài tay giá tầm 3 triệu.
+166,Tìm áo croptop ngắn tay giá tầm 1 triệu rưỡi giúp tôi.
+167,Có chân váy dài tay nào giá tầm 3 triệu không?
+168,Tìm váy dành cho nữ giá dao động quanh 1 triệu giúp tôi.
+169,Hãy tìm cho tôi quần tây mặc đi chơi giá dưới 500 nghìn.
+170,Tìm giúp tôi áo cardigan mặc đi làm giá dưới 500 nghìn.
+171,Gợi ý cho tôi vài mẫu áo blouse mặc mùa đông giá xấp xỉ 1 triệu.
+172,Tìm giày cao gót dài tay giá tầm 1 triệu rưỡi giúp tôi.
+173,Tìm giày da dành cho nữ giá trên dưới 1 triệu giúp tôi.
+174,Gợi ý cho tôi vài mẫu áo vest form ôm giá tầm 1 triệu rưỡi.
+175,Cho tôi vài lựa chọn áo ba lỗ dài tay giá tầm 3 triệu.
+176,Gợi ý cho tôi vài mẫu áo vest ngắn tay giá khoảng 700 nghìn.
+177,Tôi muốn mua quần short form rộng khoảng tầm 3 triệu.
+178,Tôi cần tìm áo croptop dành cho nữ trong tầm giá khoảng 2 triệu.
+179,Gợi ý cho tôi vài mẫu đầm mặc đi chơi giá dưới 500 nghìn.
+180,Cho tôi vài lựa chọn chân váy form ôm giá dao động quanh 1 triệu.
+181,Tìm áo croptop dành cho nam giá dưới 500 nghìn giúp tôi.
+182,Hãy tìm cho tôi áo ba lỗ form rộng giá tầm 3 triệu.
+183,Tìm giúp tôi giày sneaker dành cho nam giá dưới 1 triệu.
+184,Tìm áo vest mặc đi làm giá dưới 1 triệu giúp tôi.
+185,Hãy tìm cho tôi giày da unisex giá dưới 500 nghìn.
+186,Tìm giúp tôi chân váy form ôm giá tầm 3 triệu.
+187,Cho tôi vài lựa chọn áo cardigan form ôm giá dao động quanh 1 triệu.
+188,Tìm giúp tôi đầm mặc đi chơi giá tầm 800 nghìn.
+189,Tìm giày cao gót dành cho nam giá khoảng 700 nghìn giúp tôi.
+190,Tìm giúp tôi áo khoác dành cho nữ giá khoảng 2 triệu.
+191,Tôi muốn mua áo vest form rộng khoảng trong khoảng 1 đến 2 triệu.
+192,Tìm giày sneaker mặc đi làm giá trong khoảng 1 đến 2 triệu giúp tôi.
+193,Có giày da dành cho nữ nào giá khoảng 2 triệu không?
+194,Tìm quần jean form rộng giá dưới 500 nghìn giúp tôi.
+195,Có váy form rộng nào giá khoảng 2 triệu không?
+196,Có quần tây mặc đi làm nào giá khoảng 2 triệu không?
+197,Cho tôi xem quần short dành cho nam tầm giá dưới 500 nghìn.
+198,Gợi ý cho tôi vài mẫu giày cao gót form ôm giá dưới 500 nghìn.
+199,Tôi muốn xem giày da mặc mùa hè giá khoảng tầm 3 triệu.
+200,Gợi ý cho tôi vài mẫu áo ba lỗ form ôm giá tầm 1 triệu rưỡi.
+201,Tìm giúp tôi quần jean dành cho nam giá tầm 3 triệu.
+202,Gợi ý cho tôi vài mẫu quần short dài tay giá khoảng 2 triệu.
+203,Tôi muốn xem giày da ngắn tay giá khoảng xấp xỉ 1 triệu.
+204,Tôi muốn mua áo ba lỗ mặc đi làm khoảng tầm 800 nghìn.
+205,Tôi muốn mua áo len khoảng xấp xỉ 1 triệu.
+206,Cho tôi xem đầm mặc đi chơi tầm giá tầm 800 nghìn.
+207,Hãy tìm cho tôi chân váy ngắn tay giá dưới 1 triệu.
+208,Có giày da mặc mùa hè nào giá trên dưới 1 triệu không?
+209,Tôi cần tìm áo thun form ôm trong tầm giá xấp xỉ 1 triệu.
+210,Tôi muốn xem quần tây unisex giá khoảng trong khoảng 1 đến 2 triệu.
+211,Tôi muốn mua áo thun mặc mùa đông khoảng khoảng 700 nghìn.
+212,Cho tôi vài lựa chọn chân váy ngắn tay giá khoảng 2 triệu.
+213,Gợi ý cho tôi vài mẫu áo cardigan mặc mùa đông giá tầm 1 triệu rưỡi.
+214,Tôi muốn mua áo croptop dành cho nữ khoảng tầm 3 triệu.
+215,Gợi ý cho tôi vài mẫu giày cao gót giá dao động quanh 1 triệu.
+216,Tôi cần tìm áo thun ngắn tay trong tầm giá khoảng 2 triệu.
+217,Hãy tìm cho tôi áo cardigan giá dưới 1 triệu.
+218,Cho tôi xem áo blouse dài tay tầm giá tầm 3 triệu.
+219,Tìm giúp tôi quần tây ngắn tay giá tầm 1 triệu rưỡi.
+220,Tôi cần tìm áo polo mặc đi làm trong tầm giá trong khoảng 1 đến 2 triệu.
+221,Cho tôi vài lựa chọn quần jean mặc mùa hè giá tầm 3 triệu.
+222,Gợi ý cho tôi vài mẫu váy mặc mùa đông giá khoảng 2 triệu.
+223,Gợi ý cho tôi vài mẫu áo sơ mi unisex giá khoảng 2 triệu.
+224,Cho tôi vài lựa chọn áo blouse giá dưới 500 nghìn.
+225,Tìm đầm dành cho nam giá dưới 1 triệu giúp tôi.
+226,Tìm giúp tôi áo polo giá dưới 500 nghìn.
+227,Tôi muốn xem áo sơ mi giá khoảng trên dưới 1 triệu.
+228,Tìm áo ba lỗ mặc mùa hè giá tầm 3 triệu giúp tôi.
+229,Tìm giúp tôi giày cao gót dài tay giá dưới 500 nghìn.
+230,Tìm giúp tôi áo polo unisex giá dưới 1 triệu.
+231,Tôi muốn mua quần tây khoảng khoảng 700 nghìn.
+232,Cho tôi vài lựa chọn áo sơ mi giá dưới 500 nghìn.
+233,Tôi muốn mua quần short mặc đi chơi khoảng trên dưới 1 triệu.
+234,Tìm áo hoodie giá dao động quanh 1 triệu giúp tôi.
+235,Hãy tìm cho tôi áo croptop mặc mùa đông giá xấp xỉ 1 triệu.
+236,Cho tôi vài lựa chọn đầm mặc mùa đông giá xấp xỉ 1 triệu.
+237,Cho tôi xem giày sneaker tầm giá tầm 800 nghìn.
+238,Hãy tìm cho tôi giày cao gót dành cho nam giá dao động quanh 1 triệu.
+239,Tôi cần tìm áo vest mặc đi làm trong tầm giá xấp xỉ 1 triệu.
+240,Tôi muốn mua áo cardigan dành cho nữ khoảng trong khoảng 1 đến 2 triệu.
+241,Tìm giúp tôi giày cao gót mặc mùa hè giá khoảng 700 nghìn.
+242,Cho tôi vài lựa chọn áo blouse ngắn tay giá tầm 1 triệu rưỡi.
+243,Tìm áo thun dành cho nữ giá xấp xỉ 1 triệu giúp tôi.
+244,Cho tôi xem váy ngắn tay tầm giá trong khoảng 1 đến 2 triệu.
+245,Tìm giúp tôi áo polo mặc đi làm giá tầm 800 nghìn.
+246,Tôi cần tìm quần jean dành cho nữ trong tầm giá khoảng 2 triệu.
+247,Cho tôi xem váy mặc mùa đông tầm giá trong khoảng 1 đến 2 triệu.
+248,Hãy tìm cho tôi áo thun mặc đi chơi giá dưới 1 triệu.
+249,Tôi muốn mua áo blouse dài tay khoảng tầm 800 nghìn.
+250,Có giày da nào giá tầm 1 triệu rưỡi không?
+251,Tôi muốn xem giày da mặc mùa hè giá khoảng khoảng 700 nghìn.
+252,Tôi cần tìm chân váy form rộng trong tầm giá xấp xỉ 1 triệu.
+253,Hãy tìm cho tôi giày sneaker dành cho nữ giá trong khoảng 1 đến 2 triệu.
+254,Tìm giày sneaker giá xấp xỉ 1 triệu giúp tôi.
+255,Hãy tìm cho tôi giày da ngắn tay giá tầm 800 nghìn.
+256,Có váy mặc mùa hè nào giá tầm 800 nghìn không?
+257,Tôi muốn mua áo khoác mặc mùa hè khoảng khoảng 700 nghìn.
+258,Tôi muốn xem áo croptop form ôm giá khoảng trên dưới 1 triệu.
+259,Có chân váy mặc mùa đông nào giá khoảng 700 nghìn không?
+260,Tôi muốn mua áo khoác ngắn tay khoảng trên dưới 1 triệu.
+261,Tìm giày sneaker ngắn tay giá khoảng 2 triệu giúp tôi.
+262,Cho tôi xem áo vest mặc mùa hè tầm giá xấp xỉ 1 triệu.
+263,Gợi ý cho tôi vài mẫu áo hoodie unisex giá tầm 800 nghìn.
+264,Cho tôi xem quần tây mặc đi chơi tầm giá tầm 800 nghìn.
+265,Cho tôi xem áo khoác form rộng tầm giá tầm 800 nghìn.
+266,Cho tôi vài lựa chọn áo polo mặc mùa đông giá tầm 3 triệu.
+267,Tìm giúp tôi quần short ngắn tay giá trong khoảng 1 đến 2 triệu.
+268,Cho tôi xem áo cardigan ngắn tay tầm giá tầm 3 triệu.
+269,Cho tôi vài lựa chọn giày cao gót mặc đi chơi giá khoảng 700 nghìn.
+270,Tôi muốn mua váy form ôm khoảng dưới 500 nghìn.
+271,Gợi ý cho tôi vài mẫu áo len mặc đi chơi giá tầm 1 triệu rưỡi.
+272,Cho tôi vài lựa chọn áo ba lỗ form ôm giá tầm 800 nghìn.
+273,Cho tôi vài lựa chọn giày da unisex giá dưới 1 triệu.
+274,Hãy tìm cho tôi đầm mặc đi làm giá xấp xỉ 1 triệu.
+275,Có áo hoodie form rộng nào giá trong khoảng 1 đến 2 triệu không?
+276,Cho tôi xem áo vest form ôm tầm giá tầm 1 triệu rưỡi.
+277,Hãy tìm cho tôi giày cao gót mặc đi chơi giá khoảng 700 nghìn.
+278,Có áo cardigan mặc mùa đông nào giá khoảng 700 nghìn không?
+279,Tôi muốn mua áo cardigan mặc đi làm khoảng trên dưới 1 triệu.
+280,Tìm giúp tôi quần tây form rộng giá khoảng 2 triệu.
+281,Hãy tìm cho tôi áo len form rộng giá tầm 1 triệu rưỡi.
+282,Tìm giúp tôi áo blouse mặc mùa hè giá khoảng 700 nghìn.
+283,Hãy tìm cho tôi áo khoác ngắn tay giá dao động quanh 1 triệu.
+284,Tôi muốn xem quần jean giá khoảng khoảng 700 nghìn.
+285,Tìm giúp tôi quần short mặc đi làm giá dưới 1 triệu.
+286,Gợi ý cho tôi vài mẫu quần jean form rộng giá dưới 1 triệu.
+287,Tìm giúp tôi áo hoodie mặc mùa đông giá xấp xỉ 1 triệu.
+288,Tìm giúp tôi áo len dành cho nữ giá tầm 800 nghìn.
+289,Gợi ý cho tôi vài mẫu áo blouse unisex giá tầm 1 triệu rưỡi.
+290,Tôi muốn xem quần tây mặc mùa hè giá khoảng dưới 500 nghìn.
+291,Tôi muốn mua áo khoác mặc đi chơi khoảng dưới 500 nghìn.
+292,Tìm giúp tôi áo hoodie unisex giá trên dưới 1 triệu.
+293,Có áo cardigan ngắn tay nào giá tầm 3 triệu không?
+294,Gợi ý cho tôi vài mẫu áo khoác giá xấp xỉ 1 triệu.
+295,Tôi muốn mua áo cardigan mặc mùa hè khoảng khoảng 700 nghìn.
+296,Tôi muốn mua váy dài tay khoảng dưới 1 triệu.
+297,Gợi ý cho tôi vài mẫu áo thun mặc mùa hè giá trong khoảng 1 đến 2 triệu.
+298,Cho tôi vài lựa chọn chân váy unisex giá tầm 3 triệu.
+299,Cho tôi vài lựa chọn giày da mặc mùa hè giá tầm 1 triệu rưỡi.
+300,Tôi muốn xem váy ngắn tay giá khoảng tầm 800 nghìn.
+301,Tôi muốn mua quần tây form ôm khoảng tầm 800 nghìn.
+302,Cho tôi xem áo sơ mi dành cho nam tầm giá tầm 1 triệu rưỡi.
+303,Cho tôi xem áo hoodie tầm giá khoảng 700 nghìn.
+304,Tôi cần tìm đầm dài tay trong tầm giá dưới 500 nghìn.
+305,Cho tôi xem chân váy dành cho nam tầm giá trên dưới 1 triệu.
+306,Tôi cần tìm áo ba lỗ dài tay trong tầm giá dưới 1 triệu.
+307,Cho tôi xem áo khoác dành cho nam tầm giá dưới 1 triệu.
+308,Cho tôi vài lựa chọn áo hoodie dành cho nữ giá trên dưới 1 triệu.
+309,Cho tôi xem áo polo form rộng tầm giá khoảng 2 triệu.
+310,Gợi ý cho tôi vài mẫu quần tây mặc mùa hè giá xấp xỉ 1 triệu.
+311,Có áo khoác unisex nào giá trong khoảng 1 đến 2 triệu không?
+312,Gợi ý cho tôi vài mẫu giày cao gót ngắn tay giá khoảng 2 triệu.
+313,Có áo khoác mặc đi làm nào giá khoảng 700 nghìn không?
+314,Có giày sneaker mặc mùa hè nào giá trong khoảng 1 đến 2 triệu không?
+315,Cho tôi xem áo thun mặc mùa hè tầm giá khoảng 700 nghìn.
+316,Tôi muốn xem áo ba lỗ form ôm giá khoảng trong khoảng 1 đến 2 triệu.
+317,Tôi muốn mua quần tây unisex khoảng tầm 3 triệu.
+318,Gợi ý cho tôi vài mẫu áo len mặc đi chơi giá dưới 500 nghìn.
+319,Tôi cần tìm áo blouse form ôm trong tầm giá trong khoảng 1 đến 2 triệu.
+320,Tôi cần tìm áo len mặc đi chơi trong tầm giá tầm 3 triệu.
+321,Cho tôi xem áo blouse form rộng tầm giá tầm 1 triệu rưỡi.
+322,Tìm giúp tôi áo thun giá dưới 500 nghìn.
+323,Tìm áo ba lỗ form ôm giá tầm 800 nghìn giúp tôi.
+324,Tìm áo hoodie dài tay giá dưới 1 triệu giúp tôi.
+325,Cho tôi vài lựa chọn quần short giá dưới 500 nghìn.
+326,Gợi ý cho tôi vài mẫu váy unisex giá xấp xỉ 1 triệu.
+327,Có áo sơ mi unisex nào giá khoảng 2 triệu không?
+328,Tìm quần tây mặc đi làm giá dưới 500 nghìn giúp tôi.
+329,Gợi ý cho tôi vài mẫu áo len mặc mùa hè giá xấp xỉ 1 triệu.
+330,Tôi muốn xem áo cardigan form ôm giá khoảng dưới 500 nghìn.
+331,Cho tôi xem chân váy mặc mùa hè tầm giá trên dưới 1 triệu.
+332,Tìm áo blouse unisex giá tầm 3 triệu giúp tôi.
+333,Tìm giày da unisex giá dao động quanh 1 triệu giúp tôi.
+334,Cho tôi vài lựa chọn áo hoodie dành cho nữ giá dưới 500 nghìn.
+335,Tìm giúp tôi áo croptop ngắn tay giá trong khoảng 1 đến 2 triệu.
+336,Gợi ý cho tôi vài mẫu quần tây mặc đi làm giá khoảng 700 nghìn.
+337,Gợi ý cho tôi vài mẫu áo vest mặc đi làm giá dao động quanh 1 triệu.
+338,Tìm áo vest form rộng giá dưới 500 nghìn giúp tôi.
+339,Tôi cần tìm áo thun dành cho nam trong tầm giá dưới 500 nghìn.
+340,Gợi ý cho tôi vài mẫu giày sneaker ngắn tay giá dưới 1 triệu.
+341,Hãy tìm cho tôi áo hoodie dành cho nam giá xấp xỉ 1 triệu.
+342,Hãy tìm cho tôi quần tây mặc đi làm giá dưới 1 triệu.
+343,Tìm giúp tôi áo cardigan dài tay giá khoảng 2 triệu.
+344,Tôi muốn xem áo hoodie mặc đi làm giá khoảng tầm 3 triệu.
+345,Gợi ý cho tôi vài mẫu áo vest dài tay giá dao động quanh 1 triệu.
+346,Tìm giúp tôi đầm mặc mùa hè giá tầm 3 triệu.
+347,Tôi cần tìm áo ba lỗ mặc đi làm trong tầm giá dưới 1 triệu.
+348,Cho tôi xem áo hoodie ngắn tay tầm giá khoảng 700 nghìn.
+349,Hãy tìm cho tôi áo blouse ngắn tay giá dưới 1 triệu.
+350,Tôi muốn mua áo cardigan khoảng tầm 3 triệu.
+351,Tìm giúp tôi áo hoodie mặc đi làm giá khoảng 700 nghìn.
+352,Tìm giúp tôi áo cardigan dành cho nam giá dưới 500 nghìn.
+353,Tìm giúp tôi đầm form rộng giá dao động quanh 1 triệu.
+354,Tìm giúp tôi áo blouse dành cho nữ giá dao động quanh 1 triệu.
+355,Cho tôi vài lựa chọn áo cardigan ngắn tay giá tầm 800 nghìn.
+356,Tôi muốn xem áo thun form ôm giá khoảng trong khoảng 1 đến 2 triệu.
+357,Có giày sneaker mặc mùa hè nào giá tầm 3 triệu không?
+358,Tôi muốn xem quần tây giá khoảng trên dưới 1 triệu.
+359,Tôi cần tìm áo cardigan mặc đi làm trong tầm giá dưới 1 triệu.
+360,Cho tôi xem áo blouse dành cho nữ tầm giá khoảng 2 triệu.
+361,Có áo cardigan form rộng nào giá trong khoảng 1 đến 2 triệu không?
+362,Tìm áo ba lỗ mặc đi chơi giá tầm 1 triệu rưỡi giúp tôi.
+363,Tìm áo vest giá tầm 3 triệu giúp tôi.
+364,Cho tôi xem giày sneaker mặc mùa đông tầm giá trên dưới 1 triệu.
+365,Hãy tìm cho tôi giày da dành cho nữ giá tầm 1 triệu rưỡi.
+366,Cho tôi vài lựa chọn áo hoodie mặc mùa đông giá tầm 800 nghìn.
+367,Tìm áo len mặc đi làm giá xấp xỉ 1 triệu giúp tôi.
+368,Có áo croptop nào giá dưới 1 triệu không?
+369,Cho tôi xem áo cardigan mặc mùa đông tầm giá tầm 800 nghìn.
+370,Tôi muốn xem giày sneaker mặc mùa hè giá khoảng xấp xỉ 1 triệu.
+371,Tôi cần tìm áo polo mặc mùa hè trong tầm giá tầm 3 triệu.
+372,Có áo croptop nào giá tầm 800 nghìn không?
+373,Cho tôi xem quần tây dành cho nữ tầm giá trong khoảng 1 đến 2 triệu.
+374,Hãy tìm cho tôi áo khoác unisex giá trong khoảng 1 đến 2 triệu.
+375,Gợi ý cho tôi vài mẫu áo hoodie dành cho nữ giá tầm 3 triệu.
+376,Có quần short form ôm nào giá trên dưới 1 triệu không?
+377,Cho tôi vài lựa chọn giày sneaker dành cho nam giá tầm 1 triệu rưỡi.
+378,Tìm giúp tôi áo sơ mi dài tay giá dao động quanh 1 triệu.
+379,Tìm áo ba lỗ giá tầm 1 triệu rưỡi giúp tôi.
+380,Tôi cần tìm áo polo unisex trong tầm giá dao động quanh 1 triệu.
+381,Có áo croptop nào giá xấp xỉ 1 triệu không?
+382,Tìm giúp tôi áo khoác form ôm giá trên dưới 1 triệu.
+383,Cho tôi vài lựa chọn áo polo giá xấp xỉ 1 triệu.
+384,Cho tôi xem chân váy mặc mùa hè tầm giá tầm 800 nghìn.
+385,Cho tôi vài lựa chọn quần tây mặc đi chơi giá xấp xỉ 1 triệu.
+386,Tôi muốn xem giày da ngắn tay giá khoảng khoảng 700 nghìn.
+387,Gợi ý cho tôi vài mẫu giày da dành cho nữ giá dao động quanh 1 triệu.
+388,Tìm đầm dài tay giá tầm 1 triệu rưỡi giúp tôi.
+389,Gợi ý cho tôi vài mẫu áo croptop mặc đi chơi giá trên dưới 1 triệu.
+390,Tôi cần tìm giày sneaker mặc mùa hè trong tầm giá trên dưới 1 triệu.
+391,Cho tôi vài lựa chọn giày da form ôm giá tầm 3 triệu.
+392,Hãy tìm cho tôi chân váy form rộng giá tầm 800 nghìn.
+393,Cho tôi vài lựa chọn áo thun mặc mùa hè giá khoảng 2 triệu.
+394,Có áo sơ mi mặc mùa đông nào giá khoảng 700 nghìn không?
+395,Cho tôi xem đầm mặc mùa đông tầm giá xấp xỉ 1 triệu.
+396,Tôi muốn mua áo ba lỗ khoảng dưới 1 triệu.
+397,Cho tôi xem áo len dành cho nam tầm giá tầm 3 triệu.
+398,Tìm áo khoác mặc đi chơi giá dưới 1 triệu giúp tôi.
+399,Tìm giúp tôi áo polo mặc mùa đông giá xấp xỉ 1 triệu.
+400,Có áo len dành cho nữ nào giá dưới 1 triệu không?
+401,Có giày cao gót unisex nào giá trên dưới 1 triệu không?
+402,Có áo vest mặc mùa hè nào giá trên dưới 1 triệu không?
+403,Hãy tìm cho tôi áo cardigan unisex giá trong khoảng 1 đến 2 triệu.
+404,Có áo polo dài tay nào giá trên dưới 1 triệu không?
+405,Cho tôi vài lựa chọn đầm dành cho nam giá khoảng 2 triệu.
+406,Cho tôi xem áo len mặc mùa hè tầm giá tầm 800 nghìn.
+407,Cho tôi xem váy mặc mùa hè tầm giá khoảng 700 nghìn.
+408,Tôi muốn mua áo ba lỗ ngắn tay khoảng tầm 800 nghìn.
+409,Tìm giúp tôi áo thun giá dưới 500 nghìn.
+410,Tôi cần tìm áo vest mặc mùa đông trong tầm giá dưới 500 nghìn.
+411,Gợi ý cho tôi vài mẫu chân váy unisex giá tầm 3 triệu.
+412,Tôi cần tìm giày sneaker dành cho nữ trong tầm giá khoảng 2 triệu.
+413,Hãy tìm cho tôi quần jean mặc đi làm giá khoảng 700 nghìn.
+414,Tìm áo khoác mặc mùa đông giá dao động quanh 1 triệu giúp tôi.
+415,Hãy tìm cho tôi giày da mặc mùa đông giá dưới 1 triệu.
+416,Tôi muốn xem áo sơ mi unisex giá khoảng trên dưới 1 triệu.
+417,Hãy tìm cho tôi áo croptop unisex giá dao động quanh 1 triệu.
+418,Cho tôi xem quần jean ngắn tay tầm giá dưới 1 triệu.
+419,Cho tôi xem giày sneaker mặc đi chơi tầm giá dưới 1 triệu.
+420,Tôi muốn mua áo vest unisex khoảng dao động quanh 1 triệu.
+421,Tìm giúp tôi áo hoodie dài tay giá tầm 1 triệu rưỡi.
+422,Tìm giày cao gót mặc đi làm giá tầm 800 nghìn giúp tôi.
+423,Tìm giúp tôi chân váy mặc đi chơi giá khoảng 2 triệu.
+424,Cho tôi xem giày cao gót unisex tầm giá trong khoảng 1 đến 2 triệu.
+425,Hãy tìm cho tôi váy form rộng giá xấp xỉ 1 triệu.
+426,Hãy tìm cho tôi áo khoác unisex giá khoảng 2 triệu.
+427,Tìm giúp tôi áo len mặc mùa hè giá trong khoảng 1 đến 2 triệu.
+428,Gợi ý cho tôi vài mẫu áo vest dài tay giá xấp xỉ 1 triệu.
+429,Tôi cần tìm áo ba lỗ mặc đi chơi trong tầm giá tầm 1 triệu rưỡi.
+430,Có áo khoác nào giá xấp xỉ 1 triệu không?
+431,Tôi muốn xem quần tây unisex giá khoảng dao động quanh 1 triệu.
+432,Gợi ý cho tôi vài mẫu áo cardigan dành cho nam giá dao động quanh 1 triệu.
+433,Có áo vest unisex nào giá trên dưới 1 triệu không?
+434,Cho tôi xem áo croptop unisex tầm giá trong khoảng 1 đến 2 triệu.
+435,Có áo hoodie ngắn tay nào giá dưới 500 nghìn không?
+436,Tìm giúp tôi áo ba lỗ dài tay giá dưới 1 triệu.
+437,Có váy dành cho nữ nào giá xấp xỉ 1 triệu không?
+438,Tìm giúp tôi áo blouse mặc mùa hè giá tầm 3 triệu.
+439,Tìm giúp tôi giày cao gót mặc mùa hè giá dưới 500 nghìn.
+440,Tôi muốn xem áo cardigan form ôm giá khoảng tầm 3 triệu.
+441,Tôi muốn mua giày cao gót mặc mùa hè khoảng khoảng 700 nghìn.
+442,Cho tôi xem quần jean form rộng tầm giá khoảng 2 triệu.
+443,Có áo cardigan mặc mùa đông nào giá khoảng 2 triệu không?
+444,Tìm giúp tôi quần tây dài tay giá dưới 1 triệu.
+445,Cho tôi vài lựa chọn quần tây unisex giá dưới 1 triệu.
+446,Hãy tìm cho tôi đầm giá dưới 500 nghìn.
+447,Gợi ý cho tôi vài mẫu váy dài tay giá khoảng 700 nghìn.
+448,Cho tôi xem quần short mặc đi chơi tầm giá dao động quanh 1 triệu.
+449,Tôi muốn mua chân váy dành cho nữ khoảng tầm 1 triệu rưỡi.
+450,Tôi cần tìm chân váy dành cho nữ trong tầm giá khoảng 2 triệu.
+451,Tôi cần tìm áo ba lỗ form ôm trong tầm giá trong khoảng 1 đến 2 triệu.
+452,Cho tôi xem áo polo ngắn tay tầm giá trong khoảng 1 đến 2 triệu.
+453,Tìm giúp tôi giày da mặc đi làm giá trong khoảng 1 đến 2 triệu.
+454,Tôi muốn mua áo cardigan dành cho nữ khoảng tầm 800 nghìn.
+455,Tôi muốn xem quần short form ôm giá khoảng dưới 1 triệu.
+456,Tìm giúp tôi quần short dài tay giá tầm 3 triệu.
+457,Tìm giúp tôi áo hoodie form rộng giá khoảng 700 nghìn.
+458,Tìm giúp tôi quần short mặc mùa đông giá trong khoảng 1 đến 2 triệu.
+459,Tôi cần tìm áo polo unisex trong tầm giá tầm 800 nghìn.
+460,Có áo vest mặc mùa đông nào giá dưới 500 nghìn không?
+461,Tôi muốn mua giày da mặc mùa hè khoảng dao động quanh 1 triệu.
+462,Tôi cần tìm váy mặc đi làm trong tầm giá trên dưới 1 triệu.
+463,Cho tôi xem quần jean unisex tầm giá trên dưới 1 triệu.
+464,Cho tôi vài lựa chọn áo khoác ngắn tay giá tầm 1 triệu rưỡi.
+465,Gợi ý cho tôi vài mẫu quần tây dành cho nam giá dưới 1 triệu.
+466,Gợi ý cho tôi vài mẫu quần jean mặc mùa hè giá trên dưới 1 triệu.
+467,Cho tôi xem giày da form ôm tầm giá trên dưới 1 triệu.
+468,Tôi muốn xem chân váy dài tay giá khoảng trong khoảng 1 đến 2 triệu.
+469,Hãy tìm cho tôi quần jean form rộng giá xấp xỉ 1 triệu.
+470,Cho tôi vài lựa chọn áo vest mặc mùa đông giá tầm 3 triệu.
+471,Có áo blouse unisex nào giá tầm 800 nghìn không?
+472,Cho tôi xem áo croptop form ôm tầm giá khoảng 2 triệu.
+473,Cho tôi xem áo thun mặc mùa đông tầm giá dao động quanh 1 triệu.
+474,Có áo blouse dài tay nào giá trên dưới 1 triệu không?
+475,Tôi muốn xem áo ba lỗ unisex giá khoảng khoảng 2 triệu.
+476,Có giày sneaker nào giá trên dưới 1 triệu không?
+477,Tìm chân váy unisex giá tầm 1 triệu rưỡi giúp tôi.
+478,Gợi ý cho tôi vài mẫu chân váy form rộng giá tầm 1 triệu rưỡi.
+479,Cho tôi vài lựa chọn áo khoác mặc đi chơi giá khoảng 2 triệu.
+480,Tôi cần tìm áo ba lỗ form ôm trong tầm giá dao động quanh 1 triệu.
+481,Tôi muốn xem áo ba lỗ ngắn tay giá khoảng khoảng 700 nghìn.
+482,Tôi muốn xem quần tây form ôm giá khoảng tầm 1 triệu rưỡi.
+483,Cho tôi vài lựa chọn đầm giá dưới 1 triệu.
+484,Cho tôi vài lựa chọn váy form rộng giá trên dưới 1 triệu.
+485,Cho tôi xem giày sneaker form ôm tầm giá trên dưới 1 triệu.
+486,Tìm giúp tôi áo polo ngắn tay giá tầm 800 nghìn.
+487,Gợi ý cho tôi vài mẫu áo hoodie mặc đi làm giá dưới 1 triệu.
+488,Gợi ý cho tôi vài mẫu áo sơ mi mặc đi chơi giá tầm 3 triệu.
+489,Tôi muốn xem giày cao gót mặc mùa đông giá khoảng khoảng 700 nghìn.
+490,Gợi ý cho tôi vài mẫu đầm mặc đi làm giá dưới 500 nghìn.
+491,Có giày da form ôm nào giá tầm 3 triệu không?
+492,Cho tôi xem quần short tầm giá khoảng 2 triệu.
+493,Tìm áo thun mặc mùa đông giá xấp xỉ 1 triệu giúp tôi.
+494,Tìm giúp tôi váy mặc mùa đông giá khoảng 700 nghìn.
+495,Tôi muốn xem váy mặc đi làm giá khoảng tầm 3 triệu.
+496,Cho tôi xem áo polo tầm giá dưới 1 triệu.
+497,Cho tôi xem áo croptop dành cho nữ tầm giá xấp xỉ 1 triệu.
+498,Cho tôi xem váy form ôm tầm giá tầm 3 triệu.
+499,Tôi muốn xem áo blouse dành cho nam giá khoảng khoảng 2 triệu.
+500,Tìm chân váy mặc mùa hè giá trong khoảng 1 đến 2 triệu giúp tôi.

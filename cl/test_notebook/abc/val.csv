@@ -1,0 +1,101 @@
+﻿text,category,gender,sleeve,season,fit,color,price
+"Áo thun nam tay dài hoa nhí, chất liệu thoáng mát, phù hợp cho mùa đông, giá khoảng 300 nghìn.",Áo thun,nam,tay dài,mùa đông,slim,hoa nhí,300 nghìn
+"Quần short nam tay dài ôm màu đỏ, dễ phối đồ, hợp cho mùa xuân, chỉ 800 nghìn.",Quần short,nam,tay dài,mùa xuân,ôm,màu đỏ,800 nghìn
+"Chiếc Quần short dành cho nam kiểu tay lửng, màu màu đen, mặc mùa xuân rất thoải mái, giá hơn 1 triệu.",Quần short,nam,tay lửng,mùa xuân,dáng rộng,màu đen,hơn 1 triệu
+"Chiếc Áo hoodie dành cho nữ kiểu tay lửng, màu màu be, mặc mùa hè rất thoải mái, giá 400 nghìn.",Áo hoodie,nữ,tay lửng,mùa hè,regular,màu be,400 nghìn
+"Váy maxi nữ tay dài slim màu hồng, dễ phối đồ, hợp cho mùa xuân, chỉ 1 triệu.",Váy maxi,nữ,tay dài,mùa xuân,slim,màu hồng,1 triệu
+"Váy nữ kiểu dáng rộng màu trắng, thiết kế hợp xu hướng, dùng được quanh năm, giá 400 nghìn.",Váy,nữ,không tay,quanh năm,dáng rộng,màu trắng,400 nghìn
+"Quần short nữ tay ngắn regular màu đỏ, dễ phối đồ, hợp cho mùa xuân, chỉ 800 nghìn.",Quần short,nữ,tay ngắn,mùa xuân,regular,màu đỏ,800 nghìn
+"Chiếc Quần short dành cho nam kiểu tay dài, màu màu trắng, mặc mùa đông rất thoải mái, giá 400 nghìn.",Quần short,nam,tay dài,mùa đông,rộng,màu trắng,400 nghìn
+"Mẫu Áo khoác unisex không tay, rộng, màu hồng, phong cách thời trang quanh năm, giá bán hơn 600k.",Áo khoác,unisex,không tay,quanh năm,rộng,màu hồng,hơn 600k
+"Chiếc Áo hoodie dành cho unisex kiểu tay dài, màu màu be, mặc mùa hè rất thoải mái, giá dưới 200k.",Áo hoodie,unisex,tay dài,mùa hè,regular,màu be,dưới 200k
+"Áo khoác unisex tay dài màu xanh, chất liệu thoáng mát, phù hợp cho mùa thu, giá khoảng 800 nghìn.",Áo khoác,unisex,tay dài,mùa thu,dáng rộng,màu xanh,800 nghìn
+"Áo thun unisex kiểu slim màu xám, thiết kế hợp xu hướng, dùng được mùa thu, giá 500 nghìn.",Áo thun,unisex,không tay,mùa thu,slim,màu xám,500 nghìn
+"Váy nữ không tay màu tím, chất liệu thoáng mát, phù hợp cho mùa đông, giá khoảng 1 triệu.",Váy,nữ,không tay,mùa đông,dáng rộng,màu tím,1 triệu
+"Quần short unisex tay ngắn dáng rộng màu trắng, dễ phối đồ, hợp cho quanh năm, chỉ hơn 600k.",Quần short,unisex,tay ngắn,quanh năm,dáng rộng,màu trắng,hơn 600k
+"Mẫu Áo sơ mi nam không tay, rộng, màu vàng, phong cách thời trang mùa thu, giá bán hơn 600k.",Áo sơ mi,nam,không tay,mùa thu,rộng,màu vàng,hơn 600k
+"Mẫu Quần jeans unisex tay dài, regular, màu đen, phong cách thời trang quanh năm, giá bán 800 nghìn.",Quần jeans,unisex,tay dài,quanh năm,regular,màu đen,800 nghìn
+"Mẫu Áo sơ mi nam tay lửng, ôm, màu vàng, phong cách thời trang mùa thu, giá bán 1 triệu.",Áo sơ mi,nam,tay lửng,mùa thu,ôm,màu vàng,1 triệu
+"Chiếc Áo thun dành cho nữ kiểu tay dài, màu màu tím, mặc mùa thu rất thoải mái, giá 700 nghìn.",Áo thun,nữ,tay dài,mùa thu,dáng rộng,màu tím,700 nghìn
+"Váy nam kiểu ôm màu xanh, thiết kế hợp xu hướng, dùng được mùa xuân, giá dưới 200k.",Váy,nam,không tay,mùa xuân,ôm,màu xanh,dưới 200k
+"Chiếc Áo thun dành cho nam kiểu tay lửng, màu hoa nhí, mặc mùa hè rất thoải mái, giá 400 nghìn.",Áo thun,nam,tay lửng,mùa hè,slim,hoa nhí,400 nghìn
+"Mẫu Váy maxi nam không tay, dáng suông, màu trắng, phong cách thời trang mùa hè, giá bán 700 nghìn.",Váy maxi,nam,không tay,mùa hè,dáng suông,màu trắng,700 nghìn
+"Váy maxi nam tay ngắn màu đỏ, chất liệu thoáng mát, phù hợp cho mùa hè, giá khoảng dưới 200k.",Váy maxi,nam,tay ngắn,mùa hè,dáng suông,màu đỏ,dưới 200k
+"Mẫu Quần jeans unisex tay dài, rộng, màu đen, phong cách thời trang mùa thu, giá bán hơn 600k.",Quần jeans,unisex,tay dài,mùa thu,rộng,màu đen,hơn 600k
+"Áo khoác unisex tay ngắn màu xám, chất liệu thoáng mát, phù hợp cho mùa xuân, giá khoảng 200 nghìn.",Áo khoác,unisex,tay ngắn,mùa xuân,dáng rộng,màu xám,200 nghìn
+"Áo khoác unisex kiểu slim hoa nhí, thiết kế hợp xu hướng, dùng được mùa thu, giá 200 nghìn.",Áo khoác,unisex,tay dài,mùa thu,slim,hoa nhí,200 nghìn
+"Áo khoác unisex kiểu slim màu đỏ, thiết kế hợp xu hướng, dùng được mùa thu, giá dưới 200k.",Áo khoác,unisex,tay ngắn,mùa thu,slim,màu đỏ,dưới 200k
+"Áo thun nữ tay lửng màu trắng, chất liệu thoáng mát, phù hợp cho quanh năm, giá khoảng 800 nghìn.",Áo thun,nữ,tay lửng,quanh năm,dáng suông,màu trắng,800 nghìn
+"Chiếc Áo khoác dành cho nữ kiểu không tay, màu màu trắng, mặc quanh năm rất thoải mái, giá 800 nghìn.",Áo khoác,nữ,không tay,quanh năm,ôm,màu trắng,800 nghìn
+"Mẫu Áo hoodie nữ tay lửng, rộng, màu be, phong cách thời trang mùa đông, giá bán hơn 600k.",Áo hoodie,nữ,tay lửng,mùa đông,rộng,màu be,hơn 600k
+"Váy unisex không tay màu xám, chất liệu thoáng mát, phù hợp cho mùa thu, giá khoảng 1 triệu rưỡi.",Váy,unisex,không tay,mùa thu,ôm,màu xám,1 triệu rưỡi
+"Áo thun nam kiểu regular màu tím, thiết kế hợp xu hướng, dùng được mùa đông, giá 400 nghìn.",Áo thun,nam,tay dài,mùa đông,regular,màu tím,400 nghìn
+"Áo khoác nam tay dài màu đỏ, chất liệu thoáng mát, phù hợp cho mùa xuân, giá khoảng 300 nghìn.",Áo khoác,nam,tay dài,mùa xuân,rộng,màu đỏ,300 nghìn
+"Quần jeans nam kiểu regular màu xanh, thiết kế hợp xu hướng, dùng được mùa hè, giá hơn 600k.",Quần jeans,nam,tay ngắn,mùa hè,regular,màu xanh,hơn 600k
+"Chiếc Váy dành cho nam kiểu tay dài, màu màu xanh, mặc mùa hè rất thoải mái, giá 200 nghìn.",Váy,nam,tay dài,mùa hè,rộng,màu xanh,200 nghìn
+"Mẫu Quần short nam tay dài, ôm, hoa nhí, phong cách thời trang mùa thu, giá bán 700 nghìn.",Quần short,nam,tay dài,mùa thu,ôm,hoa nhí,700 nghìn
+"Chiếc Áo thun dành cho nữ kiểu tay ngắn, màu màu tím, mặc mùa hè rất thoải mái, giá hơn 1 triệu.",Áo thun,nữ,tay ngắn,mùa hè,dáng rộng,màu tím,hơn 1 triệu
+"Quần short nam kiểu dáng rộng màu tím, thiết kế hợp xu hướng, dùng được quanh năm, giá 300 nghìn.",Quần short,nam,không tay,quanh năm,dáng rộng,màu tím,300 nghìn
+"Áo thun nam tay dài ôm màu xanh, dễ phối đồ, hợp cho mùa thu, chỉ hơn 1 triệu.",Áo thun,nam,tay dài,mùa thu,ôm,màu xanh,hơn 1 triệu
+"Chiếc Áo thun dành cho nữ kiểu tay dài, màu hoa nhí, mặc mùa hè rất thoải mái, giá 500 nghìn.",Áo thun,nữ,tay dài,mùa hè,slim,hoa nhí,500 nghìn
+"Váy nam tay dài regular màu đen, dễ phối đồ, hợp cho mùa thu, chỉ 300 nghìn.",Váy,nam,tay dài,mùa thu,regular,màu đen,300 nghìn
+"Váy nữ kiểu ôm màu tím, thiết kế hợp xu hướng, dùng được mùa thu, giá hơn 600k.",Váy,nữ,tay dài,mùa thu,ôm,màu tím,hơn 600k
+"Áo sơ mi nam kiểu rộng màu xám, thiết kế hợp xu hướng, dùng được mùa đông, giá dưới 200k.",Áo sơ mi,nam,tay ngắn,mùa đông,rộng,màu xám,dưới 200k
+"Áo hoodie nam không tay màu xanh, chất liệu thoáng mát, phù hợp cho mùa hè, giá khoảng hơn 600k.",Áo hoodie,nam,không tay,mùa hè,dáng suông,màu xanh,hơn 600k
+"Chiếc Áo khoác dành cho nam kiểu tay ngắn, màu màu vàng, mặc quanh năm rất thoải mái, giá dưới 200k.",Áo khoác,nam,tay ngắn,quanh năm,dáng rộng,màu vàng,dưới 200k
+"Mẫu Váy maxi nam tay ngắn, dáng rộng, màu be, phong cách thời trang mùa hè, giá bán dưới 200k.",Váy maxi,nam,tay ngắn,mùa hè,dáng rộng,màu be,dưới 200k
+"Áo khoác nữ tay lửng hoa nhí, chất liệu thoáng mát, phù hợp cho mùa đông, giá khoảng 200 nghìn.",Áo khoác,nữ,tay lửng,mùa đông,dáng suông,hoa nhí,200 nghìn
+"Áo thun nữ kiểu rộng màu xanh, thiết kế hợp xu hướng, dùng được quanh năm, giá dưới 200k.",Áo thun,nữ,tay ngắn,quanh năm,rộng,màu xanh,dưới 200k
+"Váy unisex tay lửng dáng suông màu đen, dễ phối đồ, hợp cho mùa thu, chỉ 300 nghìn.",Váy,unisex,tay lửng,mùa thu,dáng suông,màu đen,300 nghìn
+"Quần short nữ kiểu rộng màu tím, thiết kế hợp xu hướng, dùng được mùa hè, giá 700 nghìn.",Quần short,nữ,tay dài,mùa hè,rộng,màu tím,700 nghìn
+"Chiếc Áo khoác dành cho nữ kiểu tay lửng, màu màu be, mặc mùa đông rất thoải mái, giá 700 nghìn.",Áo khoác,nữ,tay lửng,mùa đông,dáng suông,màu be,700 nghìn
+"Chiếc Quần short dành cho nam kiểu tay ngắn, màu màu tím, mặc quanh năm rất thoải mái, giá 1 triệu rưỡi.",Quần short,nam,tay ngắn,quanh năm,ôm,màu tím,1 triệu rưỡi
+"Quần short nữ không tay rộng màu đỏ, dễ phối đồ, hợp cho mùa đông, chỉ 500 nghìn.",Quần short,nữ,không tay,mùa đông,rộng,màu đỏ,500 nghìn
+"Váy nam tay ngắn màu hồng, chất liệu thoáng mát, phù hợp cho quanh năm, giá khoảng 400 nghìn.",Váy,nam,tay ngắn,quanh năm,ôm,màu hồng,400 nghìn
+"Mẫu Áo hoodie nữ tay dài, slim, màu đỏ, phong cách thời trang quanh năm, giá bán 300 nghìn.",Áo hoodie,nữ,tay dài,quanh năm,slim,màu đỏ,300 nghìn
+"Chiếc Quần jeans dành cho nữ kiểu không tay, màu màu xám, mặc quanh năm rất thoải mái, giá 300 nghìn.",Quần jeans,nữ,không tay,quanh năm,rộng,màu xám,300 nghìn
+"Chiếc Quần short dành cho nữ kiểu không tay, màu màu hồng, mặc mùa xuân rất thoải mái, giá 800 nghìn.",Quần short,nữ,không tay,mùa xuân,slim,màu hồng,800 nghìn
+"Chiếc Váy maxi dành cho unisex kiểu không tay, màu màu hồng, mặc mùa thu rất thoải mái, giá 400 nghìn.",Váy maxi,unisex,không tay,mùa thu,regular,màu hồng,400 nghìn
+"Áo hoodie nam tay dài slim màu xanh, dễ phối đồ, hợp cho mùa thu, chỉ hơn 600k.",Áo hoodie,nam,tay dài,mùa thu,slim,màu xanh,hơn 600k
+"Áo khoác nam kiểu dáng rộng màu đen, thiết kế hợp xu hướng, dùng được mùa xuân, giá hơn 600k.",Áo khoác,nam,tay dài,mùa xuân,dáng rộng,màu đen,hơn 600k
+"Chiếc Áo hoodie dành cho unisex kiểu tay ngắn, màu màu vàng, mặc mùa hè rất thoải mái, giá 800 nghìn.",Áo hoodie,unisex,tay ngắn,mùa hè,rộng,màu vàng,800 nghìn
+"Mẫu Váy unisex tay lửng, dáng rộng, màu be, phong cách thời trang quanh năm, giá bán 200 nghìn.",Váy,unisex,tay lửng,quanh năm,dáng rộng,màu be,200 nghìn
+"Quần short unisex không tay màu đen, chất liệu thoáng mát, phù hợp cho mùa hè, giá khoảng 800 nghìn.",Quần short,unisex,không tay,mùa hè,dáng rộng,màu đen,800 nghìn
+"Chiếc Quần short dành cho nữ kiểu tay dài, màu màu đen, mặc mùa thu rất thoải mái, giá dưới 200k.",Quần short,nữ,tay dài,mùa thu,rộng,màu đen,dưới 200k
+"Áo sơ mi nữ kiểu dáng rộng hoa nhí, thiết kế hợp xu hướng, dùng được quanh năm, giá 500 nghìn.",Áo sơ mi,nữ,tay dài,quanh năm,dáng rộng,hoa nhí,500 nghìn
+"Quần short nam tay dài màu hồng, chất liệu thoáng mát, phù hợp cho mùa hè, giá khoảng hơn 600k.",Quần short,nam,tay dài,mùa hè,slim,màu hồng,hơn 600k
+"Áo sơ mi nam kiểu slim hoa nhí, thiết kế hợp xu hướng, dùng được mùa xuân, giá 1 triệu rưỡi.",Áo sơ mi,nam,tay lửng,mùa xuân,slim,hoa nhí,1 triệu rưỡi
+"Chiếc Quần jeans dành cho unisex kiểu tay dài, màu màu đen, mặc mùa hè rất thoải mái, giá 500 nghìn.",Quần jeans,unisex,tay dài,mùa hè,ôm,màu đen,500 nghìn
+"Mẫu Áo hoodie nam tay ngắn, slim, màu xám, phong cách thời trang mùa hè, giá bán hơn 600k.",Áo hoodie,nam,tay ngắn,mùa hè,slim,màu xám,hơn 600k
+"Váy unisex không tay màu vàng, chất liệu thoáng mát, phù hợp cho quanh năm, giá khoảng 1 triệu.",Váy,unisex,không tay,quanh năm,regular,màu vàng,1 triệu
+"Váy nữ tay lửng ôm màu đen, dễ phối đồ, hợp cho mùa hè, chỉ 500 nghìn.",Váy,nữ,tay lửng,mùa hè,ôm,màu đen,500 nghìn
+"Áo sơ mi nữ tay dài màu hồng, chất liệu thoáng mát, phù hợp cho mùa thu, giá khoảng 1 triệu rưỡi.",Áo sơ mi,nữ,tay dài,mùa thu,regular,màu hồng,1 triệu rưỡi
+"Áo sơ mi nam tay ngắn hoa nhí, chất liệu thoáng mát, phù hợp cho mùa đông, giá khoảng hơn 1 triệu.",Áo sơ mi,nam,tay ngắn,mùa đông,rộng,hoa nhí,hơn 1 triệu
+"Mẫu Quần short unisex tay lửng, dáng suông, màu tím, phong cách thời trang mùa hè, giá bán 800 nghìn.",Quần short,unisex,tay lửng,mùa hè,dáng suông,màu tím,800 nghìn
+"Váy maxi nam tay ngắn màu tím, chất liệu thoáng mát, phù hợp cho mùa hè, giá khoảng 1 triệu rưỡi.",Váy maxi,nam,tay ngắn,mùa hè,rộng,màu tím,1 triệu rưỡi
+"Chiếc Áo hoodie dành cho nữ kiểu tay lửng, màu màu tím, mặc mùa thu rất thoải mái, giá 400 nghìn.",Áo hoodie,nữ,tay lửng,mùa thu,dáng rộng,màu tím,400 nghìn
+"Áo khoác nữ không tay dáng rộng màu trắng, dễ phối đồ, hợp cho mùa đông, chỉ 400 nghìn.",Áo khoác,nữ,không tay,mùa đông,dáng rộng,màu trắng,400 nghìn
+"Quần short nữ tay dài rộng màu hồng, dễ phối đồ, hợp cho mùa đông, chỉ 800 nghìn.",Quần short,nữ,tay dài,mùa đông,rộng,màu hồng,800 nghìn
+"Chiếc Quần jeans dành cho nam kiểu tay ngắn, màu màu đỏ, mặc mùa hè rất thoải mái, giá dưới 200k.",Quần jeans,nam,tay ngắn,mùa hè,dáng suông,màu đỏ,dưới 200k
+"Mẫu Quần short unisex tay ngắn, dáng suông, màu đỏ, phong cách thời trang mùa hè, giá bán 400 nghìn.",Quần short,unisex,tay ngắn,mùa hè,dáng suông,màu đỏ,400 nghìn
+"Áo sơ mi nam tay lửng dáng rộng màu đen, dễ phối đồ, hợp cho mùa hè, chỉ 200 nghìn.",Áo sơ mi,nam,tay lửng,mùa hè,dáng rộng,màu đen,200 nghìn
+"Quần short nam kiểu dáng rộng màu hồng, thiết kế hợp xu hướng, dùng được mùa thu, giá 700 nghìn.",Quần short,nam,tay ngắn,mùa thu,dáng rộng,màu hồng,700 nghìn
+"Chiếc Quần short dành cho nữ kiểu tay lửng, màu màu hồng, mặc mùa hè rất thoải mái, giá hơn 600k.",Quần short,nữ,tay lửng,mùa hè,dáng suông,màu hồng,hơn 600k
+"Mẫu Áo khoác unisex tay dài, dáng rộng, màu be, phong cách thời trang mùa đông, giá bán 200 nghìn.",Áo khoác,unisex,tay dài,mùa đông,dáng rộng,màu be,200 nghìn
+"Mẫu Áo thun nữ tay ngắn, regular, màu trắng, phong cách thời trang mùa thu, giá bán 800 nghìn.",Áo thun,nữ,tay ngắn,mùa thu,regular,màu trắng,800 nghìn
+"Mẫu Quần jeans unisex tay dài, rộng, màu vàng, phong cách thời trang mùa đông, giá bán 1 triệu.",Quần jeans,unisex,tay dài,mùa đông,rộng,màu vàng,1 triệu
+"Áo thun unisex tay ngắn slim màu đen, dễ phối đồ, hợp cho quanh năm, chỉ 500 nghìn.",Áo thun,unisex,tay ngắn,quanh năm,slim,màu đen,500 nghìn
+"Mẫu Quần jeans nữ tay dài, regular, màu tím, phong cách thời trang mùa xuân, giá bán hơn 600k.",Quần jeans,nữ,tay dài,mùa xuân,regular,màu tím,hơn 600k
+"Áo khoác nam kiểu rộng màu hồng, thiết kế hợp xu hướng, dùng được mùa đông, giá 1 triệu rưỡi.",Áo khoác,nam,tay ngắn,mùa đông,rộng,màu hồng,1 triệu rưỡi
+"Áo khoác unisex tay dài slim màu xám, dễ phối đồ, hợp cho mùa thu, chỉ hơn 600k.",Áo khoác,unisex,tay dài,mùa thu,slim,màu xám,hơn 600k
+"Quần short nữ kiểu ôm màu tím, thiết kế hợp xu hướng, dùng được mùa hè, giá 800 nghìn.",Quần short,nữ,tay ngắn,mùa hè,ôm,màu tím,800 nghìn
+"Quần jeans unisex tay ngắn ôm màu trắng, dễ phối đồ, hợp cho mùa hè, chỉ 500 nghìn.",Quần jeans,unisex,tay ngắn,mùa hè,ôm,màu trắng,500 nghìn
+"Chiếc Váy dành cho nam kiểu tay ngắn, màu màu trắng, mặc mùa thu rất thoải mái, giá 800 nghìn.",Váy,nam,tay ngắn,mùa thu,rộng,màu trắng,800 nghìn
+"Chiếc Áo khoác dành cho nam kiểu tay ngắn, màu màu trắng, mặc mùa đông rất thoải mái, giá 1 triệu.",Áo khoác,nam,tay ngắn,mùa đông,regular,màu trắng,1 triệu
+"Quần short nam tay ngắn màu đỏ, chất liệu thoáng mát, phù hợp cho mùa đông, giá khoảng 1 triệu rưỡi.",Quần short,nam,tay ngắn,mùa đông,slim,màu đỏ,1 triệu rưỡi
+"Mẫu Quần short nữ tay dài, dáng suông, màu hồng, phong cách thời trang quanh năm, giá bán 300 nghìn.",Quần short,nữ,tay dài,quanh năm,dáng suông,màu hồng,300 nghìn
+"Mẫu Áo thun nữ tay ngắn, rộng, màu vàng, phong cách thời trang mùa hè, giá bán 700 nghìn.",Áo thun,nữ,tay ngắn,mùa hè,rộng,màu vàng,700 nghìn
+"Áo khoác nam tay dài màu đen, chất liệu thoáng mát, phù hợp cho quanh năm, giá khoảng 800 nghìn.",Áo khoác,nam,tay dài,quanh năm,ôm,màu đen,800 nghìn
+"Quần jeans unisex tay ngắn dáng suông màu xanh, dễ phối đồ, hợp cho mùa xuân, chỉ 700 nghìn.",Quần jeans,unisex,tay ngắn,mùa xuân,dáng suông,màu xanh,700 nghìn
+"Chiếc Quần short dành cho nữ kiểu tay lửng, màu màu tím, mặc mùa thu rất thoải mái, giá 1 triệu rưỡi.",Quần short,nữ,tay lửng,mùa thu,ôm,màu tím,1 triệu rưỡi
+"Áo sơ mi nam tay ngắn ôm màu hồng, dễ phối đồ, hợp cho mùa hè, chỉ hơn 600k.",Áo sơ mi,nam,tay ngắn,mùa hè,ôm,màu hồng,hơn 600k
