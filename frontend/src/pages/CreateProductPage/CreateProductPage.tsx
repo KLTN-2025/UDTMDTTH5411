@@ -124,7 +124,7 @@ const CreateProductPage: React.FC = () => {
     { value: "tshirts", label: "T-Shirts" },
     { value: "glasses", label: "Glasses" },
     { value: "haps", label: "Haps" },
-
+    { value: "watches", label: "Watches" },
     { value: "scarves", label: "Scarves" },
     { value: "socks", label: "Socks" },
     { value: "underwear", label: "Underwear" },
