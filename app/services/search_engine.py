@@ -148,7 +148,7 @@ class FashionSearchEngine:
             logger.error(f"Error loading index: {e}")
             return False
     
-    def search_similar_products(self, image_url: str, k: int = 5) -> List[dict]:
+    def search_similar_products(self, image_url: str, k: int = 5, min_similarity: float = None) -> List[dict]:
         if not self.is_index_loaded:
             logger.warning("Index not loaded, building now...")
             self.build_index()
@@ -157,13 +157,24 @@ class FashionSearchEngine:
             image = self.embedder.load_image_from_url(image_url)
             query_features = self.embedder.extract_features(image)
             
-            similar_items = self.vector_db.search(query_features, k)
+            # Nếu có min_similarity và >= 0.75, tìm kiếm không giới hạn
+            if min_similarity and min_similarity >= 0.75:
+                # Tìm kiếm tất cả vectors để lọc theo độ tương tự
+                similar_items = self.vector_db.search(query_features, self.vector_db.index.ntotal)
+            else:
+                # Tìm kiếm bình thường với giới hạn k
+                similar_items = self.vector_db.search(query_features, k)
             
             results = []
             for product_id, similarity in similar_items:
+                similarity_score = (similarity + 1.0) / 2.0
+                
+                # Lọc theo độ tương tự tối thiểu nếu có
+                if min_similarity and similarity_score < min_similarity:
+                    continue
+                    
                 product = self.mongo_manager.get_product_by_id(product_id)
                 if product:
-                    similarity_score = (similarity + 1.0) / 2.0
                     product['similarity_score'] = float(similarity_score)
                     product['distance'] = float(1.0 - similarity_score)
                     results.append(product)
@@ -175,19 +186,32 @@ class FashionSearchEngine:
             logger.error(f"Error in search: {e}")
             return []
     
-    def search_similar_products_from_bytes(self, image_bytes: bytes, k: int = 5) -> List[dict]:
+    def search_similar_products_from_bytes(self, image_bytes: bytes, k: int = 5, min_similarity: float = None) -> List[dict]:
         if not self.is_index_loaded:
             logger.warning("Index not loaded, building now...")
             self.build_index()
         try:
             image = self.embedder.load_image_from_bytes(image_bytes)
             query_features = self.embedder.extract_features(image)
-            similar_items = self.vector_db.search(query_features, k)
+            
+            # Nếu có min_similarity và >= 0.75, tìm kiếm không giới hạn
+            if min_similarity and min_similarity >= 0.75:
+                # Tìm kiếm tất cả vectors để lọc theo độ tương tự
+                similar_items = self.vector_db.search(query_features, self.vector_db.index.ntotal)
+            else:
+                # Tìm kiếm bình thường với giới hạn k
+                similar_items = self.vector_db.search(query_features, k)
+            
             results = []
             for product_id, similarity in similar_items:
+                similarity_score = (similarity + 1.0) / 2.0
+                
+                # Lọc theo độ tương tự tối thiểu nếu có
+                if min_similarity and similarity_score < min_similarity:
+                    continue
+                    
                 product = self.mongo_manager.get_product_by_id(product_id)
                 if product:
-                    similarity_score = (similarity + 1.0) / 2.0
                     product['similarity_score'] = float(similarity_score)
                     product['distance'] = float(1.0 - similarity_score)
                     results.append(product)
@@ -239,7 +263,7 @@ class FashionSearchEngine:
         except Exception:
             return []
     
-    def search_similar_products_by_text(self, text_query: str, k: int = 5) -> List[dict]:
+    def search_similar_products_by_text(self, text_query: str, k: int = 5, min_similarity: float = None) -> List[dict]:
         if not self.is_index_loaded:
             logger.warning("Index not loaded, building now...")
             self.build_index()
@@ -248,13 +272,24 @@ class FashionSearchEngine:
         try:
             text_features = self.embedder.extract_text_features(text_query)
             
-            similar_items = self.vector_db.search(text_features, k)
+            # Nếu có min_similarity và >= 0.75, tìm kiếm không giới hạn
+            if min_similarity and min_similarity >= 0.75:
+                # Tìm kiếm tất cả vectors để lọc theo độ tương tự
+                similar_items = self.vector_db.search(text_features, self.vector_db.index.ntotal)
+            else:
+                # Tìm kiếm bình thường với giới hạn k
+                similar_items = self.vector_db.search(text_features, k)
             
             results = []
             for product_id, similarity in similar_items:
+                similarity_score = (similarity + 1.0) / 2.0
+                
+                # Lọc theo độ tương tự tối thiểu nếu có
+                if min_similarity and similarity_score < min_similarity:
+                    continue
+                    
                 product = self.mongo_manager.get_product_by_id(product_id)
                 if product:
-                    similarity_score = (similarity + 1.0) / 2.0
                     product['similarity_score'] = float(similarity_score)
                     product['distance'] = float(1.0 - similarity_score)
                     results.append(product)

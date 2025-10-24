@@ -5,15 +5,13 @@ from app.services.simple_search_engine import SimpleFashionSearchEngine
 from app.utils.config import get_settings
 from bson import ObjectId
 from typing import Dict, Any
+from datetime import datetime
 
 router = APIRouter()
 settings = get_settings()
 
-try:
-    from app.services.search_engine import FashionSearchEngine
-    search_engine = FashionSearchEngine()
-except Exception:
-    search_engine = SimpleFashionSearchEngine()
+# Force sử dụng SimpleFashionSearchEngine để có logic exact match
+search_engine = SimpleFashionSearchEngine()
 
 class ProductResponse(BaseModel):
     id: str
@@ -23,34 +21,38 @@ class ProductResponse(BaseModel):
     similarity_score: float
     distance: float
     description: Optional[str] = None
+    is_exact_match: Optional[bool] = False
 
     class Config:
         json_encoders = {
             ObjectId: str
         }
 
-@router.post("/search/similar-to-image/upload", response_model=List[ProductResponse])
-async def search_similar_to_image_upload(file: UploadFile = File(...), k: int = 5):
+@router.post("/search/similar", response_model=List[ProductResponse])
+async def search_similar_products(image: UploadFile = File(...)):
     """
     Tìm kiếm sản phẩm tương tự từ file ảnh upload sử dụng FashionCLIP.
     
     - **file**: File ảnh (jpg, jpeg, png)
     - **k**: Số lượng sản phẩm tương tự cần trả về (mặc định: 5)
+    - **min_similarity**: Độ tương tự tối thiểu (0.0-1.0, mặc định: 0.75 = 75%)
     
     FashionCLIP sẽ phân tích ảnh và tìm các sản phẩm có style/tính chất tương tự.
+    **Đặc biệt**: Nếu min_similarity >= 0.75, hệ thống sẽ trả về TẤT CẢ sản phẩm có độ tương tự >= 75% (không giới hạn số lượng).
+    Nếu min_similarity < 0.75, chỉ trả về tối đa k sản phẩm.
     """
     try:
         # Kiểm tra file type
-        if not file.content_type or not file.content_type.startswith('image/'):
+        if not image.content_type or not image.content_type.startswith('image/'):
             raise HTTPException(status_code=400, detail="File phải là hình ảnh")
         
         # Đọc toàn bộ bytes của file upload
-        image_bytes = await file.read()
+        image_bytes = await image.read()
         if not image_bytes:
             raise HTTPException(status_code=400, detail="File ảnh trống")
 
-        # Sử dụng FashionCLIP để tìm kiếm
-        results = search_engine.search_similar_products_from_bytes(image_bytes, k)
+        # Sử dụng FashionCLIP để tìm kiếm với default parameters
+        results = search_engine.search_similar_products_from_bytes(image_bytes, k=5, min_similarity=0.75)
 
         response = []
         for product in results:
@@ -58,10 +60,11 @@ async def search_similar_to_image_upload(file: UploadFile = File(...), k: int = 
                 id=str(product["_id"]),
                 name=product.get("name", ""),
                 price=product.get("sale_price", 0),
-                images=product.get("images", []),
+                images=product.get(settings.image_field, []),
                 similarity_score=product.get("similarity_score", 0),
                 distance=product.get("distance", 0),
-                description=product.get("description", "")
+                description=product.get("description", ""),
+                is_exact_match=product.get("is_exact_match", False)
             ))
         return response
     except HTTPException:
@@ -70,21 +73,24 @@ async def search_similar_to_image_upload(file: UploadFile = File(...), k: int = 
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.post("/search/similar-to-image/url", response_model=List[ProductResponse])
-async def search_similar_to_image_url(image_url: str, k: int = 5):
+async def search_similar_to_image_url(image_url: str, k: int = 5, min_similarity: float = 0.75):
     """
     Tìm kiếm sản phẩm tương tự từ URL ảnh sử dụng FashionCLIP.
     
     - **image_url**: URL của ảnh cần tìm kiếm
     - **k**: Số lượng sản phẩm tương tự cần trả về (mặc định: 5)
+    - **min_similarity**: Độ tương tự tối thiểu (0.0-1.0, mặc định: 0.75 = 75%)
     
     FashionCLIP sẽ tải ảnh từ URL và tìm các sản phẩm có style/tính chất tương tự.
+    **Đặc biệt**: Nếu min_similarity >= 0.75, hệ thống sẽ trả về TẤT CẢ sản phẩm có độ tương tự >= 75% (không giới hạn số lượng).
+    Nếu min_similarity < 0.75, chỉ trả về tối đa k sản phẩm.
     """
     try:
         if not image_url:
             raise HTTPException(status_code=400, detail="URL ảnh không được để trống")
 
-        # Sử dụng FashionCLIP để tìm kiếm từ URL
-        results = search_engine.search_similar_products(image_url, k)
+        # Sử dụng FashionCLIP để tìm kiếm từ URL với min_similarity
+        results = search_engine.search_similar_products(image_url, k, min_similarity)
 
         response = []
         for product in results:
@@ -92,10 +98,11 @@ async def search_similar_to_image_url(image_url: str, k: int = 5):
                 id=str(product["_id"]),
                 name=product.get("name", ""),
                 price=product.get("sale_price", 0),
-                images=product.get("images", []),
+                images=product.get(settings.image_field, []),
                 similarity_score=product.get("similarity_score", 0),
                 distance=product.get("distance", 0),
-                description=product.get("description", "")
+                description=product.get("description", ""),
+                is_exact_match=product.get("is_exact_match", False)
             ))
         return response
     except HTTPException:
@@ -119,10 +126,11 @@ async def search_similar_to_product(
                 id=str(product["_id"]),
                 name=product.get("name", ""),
                 price=product.get("sale_price", 0),
-                images=product.get("images", []),
+                images=product.get(settings.image_field, []),
                 similarity_score=product.get("similarity_score", 0),
                 distance=product.get("distance", 0),
-                description=product.get("description", "")
+                description=product.get("description", ""),
+                is_exact_match=product.get("is_exact_match", False)
             ))
         
         return response
@@ -142,9 +150,48 @@ async def rebuild_index(force: bool = False):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+@router.post("/admin/build-index")
+async def admin_build_index(force: bool = False):
+    """Admin endpoint to build index with detailed logging"""
+    try:
+        import logging
+        logger = logging.getLogger(__name__)
+        
+        logger.info("Admin requested index rebuild")
+        
+        # Build index
+        try:
+            search_engine.build_index(index_path=settings.index_path, force_rebuild=force)
+        except TypeError:
+            search_engine.build_index(index_path=settings.index_path, force=force)
+        
+        # Get updated stats
+        stats = search_engine.get_index_stats()
+        
+        logger.info(f"Index rebuild completed. Stats: {stats}")
+        
+        return {
+            "success": True,
+            "message": "Index built successfully",
+            "stats": stats,
+            "timestamp": str(datetime.now())
+        }
+    except Exception as e:
+        logger.error(f"Index rebuild failed: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
 @router.get("/index/stats")
 async def get_index_stats():
     """Get statistics about the current index"""
+    try:
+        stats = search_engine.get_index_stats()
+        return stats
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/stats")
+async def get_stats():
+    """Get statistics about the current index (alias for /index/stats)"""
     try:
         stats = search_engine.get_index_stats()
         return stats
@@ -163,7 +210,7 @@ async def get_sample_products(limit: int = Query(5, description="Number of sampl
                 "id": str(product["_id"]),
                 "name": product.get("name", ""),
                 "price": product.get("sale_price", 0),
-                "images": product.get("images", []),
+                "images": product.get(settings.image_field, []),
                 "description": product.get("description", "")
             })
         
@@ -174,11 +221,12 @@ async def get_sample_products(limit: int = Query(5, description="Number of sampl
 @router.get("/search/similar-to-text", response_model=List[ProductResponse])
 async def search_similar_to_text(
     query: str = Query(..., description="Text query to search for similar products"),
-    k: int = Query(5, description="Number of similar products to return")
+    k: int = Query(5, description="Number of similar products to return"),
+    min_similarity: float = Query(0.75, description="Minimum similarity threshold (0.0-1.0)")
 ):
     """Tìm kiếm sản phẩm tương tự bằng text query sử dụng FashionCLIP"""
     try:
-        results = search_engine.search_similar_products_by_text(query, k)
+        results = search_engine.search_similar_products_by_text(query, k, min_similarity)
         
         response = []
         for product in results:
@@ -186,10 +234,34 @@ async def search_similar_to_text(
                 id=str(product["_id"]),
                 name=product.get("name", ""),
                 price=product.get("sale_price", 0),
-                images=product.get("images", []),
+                images=product.get(settings.image_field, []),
                 similarity_score=product.get("similarity_score", 0),
                 distance=product.get("distance", 0),
-                description=product.get("description", "")
+                description=product.get("description", ""),
+                is_exact_match=product.get("is_exact_match", False)
+            ))
+        
+        return response
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/search/text", response_model=List[ProductResponse])
+async def search_by_text_post(query: str, k: int = 5, min_similarity: float = 0.75):
+    """Tìm kiếm sản phẩm tương tự bằng text query sử dụng FashionCLIP (POST method)"""
+    try:
+        results = search_engine.search_similar_products_by_text(query, k, min_similarity)
+        
+        response = []
+        for product in results:
+            response.append(ProductResponse(
+                id=str(product["_id"]),
+                name=product.get("name", ""),
+                price=product.get("sale_price", 0),
+                images=product.get(settings.image_field, []),
+                similarity_score=product.get("similarity_score", 0),
+                distance=product.get("distance", 0),
+                description=product.get("description", ""),
+                is_exact_match=product.get("is_exact_match", False)
             ))
         
         return response
@@ -197,7 +269,7 @@ async def search_similar_to_text(
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/search/text", response_model=List[Dict[str, Any]])
-async def search_by_text(
+async def search_by_text_get(
     query: str = Query(..., description="Text query to search in product names/descriptions"),
     k: int = Query(5, description="Number of products to return")
 ):
@@ -211,7 +283,7 @@ async def search_by_text(
                 "id": str(product["_id"]),
                 "name": product.get("name", ""),
                 "price": product.get("sale_price", 0),
-                "images": product.get("images", []),
+                "images": product.get(settings.image_field, []),
                 "description": product.get("description", "")
             })
         

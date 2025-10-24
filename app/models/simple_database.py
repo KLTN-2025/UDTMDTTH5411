@@ -6,8 +6,10 @@ from pymongo import MongoClient
 from datetime import datetime
 from bson import ObjectId
 import logging
+from app.utils.config import get_settings
 
 logger = logging.getLogger(__name__)
+settings = get_settings()
 
 class SimpleVectorDatabase:
     
@@ -98,7 +100,7 @@ class SimpleMongoDBManager:
     
     def get_products_with_images(self, limit: Optional[int] = None) -> List[Dict[str, Any]]:
         try:
-            query = {"images": {"$exists": True, "$not": {"$size": 0}}}
+            query = {settings.image_field: {"$exists": True, "$not": {"$size": 0}}}
             cursor = self.collection.find(query)
             
             if limit:

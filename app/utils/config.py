@@ -3,11 +3,11 @@ from functools import lru_cache
 
 class Settings(BaseSettings):
     mongo_uri: str = "mongodb://localhost:27017/"
-    db_name: str = "fashion-video-app-stg"
-    collection_name: str = "productsv2"
+    db_name: str = "ecommerce"  # Tên database ecommerce của bạn
+    collection_name: str = "products"  # Collection chứa sản phẩm
     embedder_model: str = "fashion-clip"
-    index_path: str = "data/indices/fashion_index.faiss"
-    image_field: str = "images"
+    index_path: str = "data/indices/ecommerce_index.faiss"
+    image_field: str = "images"  # Field chứa URLs của images
     batch_size: int = 32
     feature_dimension: int = 512
     torch_home: str | None = None
@@ -30,6 +30,8 @@ class Settings(BaseSettings):
     rerank_weight_similarity: float = 0.85
     rerank_weight_price: float = 0.15
     rerank_price_tolerance: float = 0.3
+    # Similarity threshold settings
+    min_similarity_threshold: float = 0.75
     
     class Config:
         env_file = ".env"

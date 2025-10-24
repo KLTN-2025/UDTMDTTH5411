@@ -207,38 +207,183 @@ class SimpleFashionSearchEngine:
             logger.error(f"Similar products search failed: {e}")
             return []
     
-    def search_similar_products_from_bytes(self, image_bytes: bytes, k: int = 10) -> List[Dict[str, Any]]:
+    def search_similar_products_from_bytes(self, image_bytes: bytes, k: int = 10, min_similarity: float = None) -> List[Dict[str, Any]]:
+        """
+        Tìm kiếm sản phẩm tương tự từ image bytes
+        Ưu tiên sản phẩm có cùng ảnh trước khi tìm sản phẩm tương tự
+        """
         try:
             from PIL import Image
             from io import BytesIO
+            import hashlib
             
             image = Image.open(BytesIO(image_bytes)).convert('RGB')
             
+            # Tạo hash của image để so sánh với ảnh trong database
+            image_hash = hashlib.md5(image_bytes).hexdigest()
+            
             query_vector = self.embedder.extract_features(image)
             
-            similarities, indices = self.vector_db.search(query_vector, k)
+            # BƯỚC 1: Tìm sản phẩm có cùng ảnh (ưu tiên cao nhất)
+            exact_match_products = []
+            all_products = self.mongo_manager.get_products_with_images()
             
-            results = []
+            for product in all_products:
+                product_images = product.get(settings.image_field, [])
+                # So sánh hash hoặc tải ảnh để so sánh
+                for img_url in product_images:
+                    try:
+                        import requests
+                        response = requests.get(img_url, timeout=5)
+                        if response.status_code == 200:
+                            img_hash = hashlib.md5(response.content).hexdigest()
+                            if img_hash == image_hash:
+                                exact_match_products.append({
+                                    "_id": product["_id"],
+                                    "name": product.get("name", "Unknown Product"),
+                                    "sale_price": product.get("price", 0),
+                                    "description": product.get("description", ""),
+                                    "images": product_images,
+                                    "similarity_score": 1.0,  # Exact match = 100%
+                                    "distance": 0.0,
+                                    "is_exact_match": True
+                                })
+                                break  # Chỉ cần 1 ảnh match
+                    except:
+                        continue  # Bỏ qua nếu không tải được ảnh
+            
+            # BƯỚC 2: Tìm sản phẩm tương tự bằng vector search
+            if min_similarity and min_similarity >= 0.75:
+                # Tìm kiếm tất cả vectors để lọc theo độ tương tự
+                similarities, indices = self.vector_db.search(query_vector, len(self.vector_db.vectors))
+            else:
+                # Tìm kiếm bình thường với giới hạn k
+                similarities, indices = self.vector_db.search(query_vector, k)
+            
+            similar_products = []
             for i, (sim, idx) in enumerate(zip(similarities, indices)):
+                # Lọc theo độ tương tự tối thiểu nếu có
+                if min_similarity and float(sim) < min_similarity:
+                    continue
+                    
                 if idx < len(self.vector_db.product_ids):
                     product_id = self.vector_db.product_ids[idx]
                     product = self.mongo_manager.get_product_by_id(product_id)
                     
                     if product:
-                        results.append({
-                            "_id": product["_id"],
-                            "name": product.get("name", "Unknown Product"),
-                            "sale_price": product.get("price", 0),
-                            "description": product.get("description", ""),
-                            "images": product.get("images", []),
-                            "similarity_score": float(sim),
-                            "distance": 1.0 - float(sim)
-                        })
+                        # Kiểm tra xem sản phẩm này đã có trong exact match chưa
+                        product_id_str = str(product["_id"])
+                        is_duplicate = any(str(exact["_id"]) == product_id_str for exact in exact_match_products)
+                        
+                        if not is_duplicate:  # Chỉ thêm nếu chưa có trong exact match
+                            similar_products.append({
+                                "_id": product["_id"],
+                                "name": product.get("name", "Unknown Product"),
+                                "sale_price": product.get("price", 0),
+                                "description": product.get("description", ""),
+                                "images": product.get(settings.image_field, []),
+                                "similarity_score": float(sim),
+                                "distance": 1.0 - float(sim),
+                                "is_exact_match": False
+                            })
             
+            # BƯỚC 3: Kết hợp kết quả - ưu tiên exact match trước
+            results = exact_match_products + similar_products
+            
+            # Giới hạn số lượng kết quả
+            if k > 0:
+                results = results[:k]
+            
+            logger.info(f"Search from bytes results: {len(exact_match_products)} exact matches, {len(similar_products)} similar products")
             return results
             
         except Exception as e:
             logger.error(f"Search from bytes failed: {e}")
+            return []
+    
+    def search_similar_products(self, image_url: str, k: int = 10, min_similarity: float = None) -> List[Dict[str, Any]]:
+        """
+        Tìm kiếm sản phẩm tương tự từ URL ảnh
+        Ưu tiên sản phẩm có cùng ảnh trước khi tìm sản phẩm tương tự
+        """
+        try:
+            import requests
+            from PIL import Image
+            from io import BytesIO
+            
+            # Tải ảnh từ URL
+            response = requests.get(image_url, timeout=10)
+            response.raise_for_status()
+            
+            image = Image.open(BytesIO(response.content)).convert('RGB')
+            
+            query_vector = self.embedder.extract_features(image)
+            
+            # BƯỚC 1: Tìm sản phẩm có cùng ảnh (ưu tiên cao nhất)
+            exact_match_products = []
+            all_products = self.mongo_manager.get_products_with_images()
+            
+            for product in all_products:
+                product_images = product.get(settings.image_field, [])
+                if image_url in product_images:
+                    exact_match_products.append({
+                        "_id": product["_id"],
+                        "name": product.get("name", "Unknown Product"),
+                        "sale_price": product.get("price", 0),
+                        "description": product.get("description", ""),
+                        "images": product_images,
+                        "similarity_score": 1.0,  # Exact match = 100%
+                        "distance": 0.0,
+                        "is_exact_match": True
+                    })
+            
+            # BƯỚC 2: Tìm sản phẩm tương tự bằng vector search
+            if min_similarity and min_similarity >= 0.75:
+                # Tìm kiếm tất cả vectors để lọc theo độ tương tự
+                similarities, indices = self.vector_db.search(query_vector, len(self.vector_db.vectors))
+            else:
+                # Tìm kiếm bình thường với giới hạn k
+                similarities, indices = self.vector_db.search(query_vector, k)
+            
+            similar_products = []
+            for i, (sim, idx) in enumerate(zip(similarities, indices)):
+                # Lọc theo độ tương tự tối thiểu nếu có
+                if min_similarity and float(sim) < min_similarity:
+                    continue
+                    
+                if idx < len(self.vector_db.product_ids):
+                    product_id = self.vector_db.product_ids[idx]
+                    product = self.mongo_manager.get_product_by_id(product_id)
+                    
+                    if product:
+                        # Kiểm tra xem sản phẩm này đã có trong exact match chưa
+                        product_id_str = str(product["_id"])
+                        is_duplicate = any(str(exact["_id"]) == product_id_str for exact in exact_match_products)
+                        
+                        if not is_duplicate:  # Chỉ thêm nếu chưa có trong exact match
+                            similar_products.append({
+                                "_id": product["_id"],
+                                "name": product.get("name", "Unknown Product"),
+                                "sale_price": product.get("price", 0),
+                                "description": product.get("description", ""),
+                                "images": product.get(settings.image_field, []),
+                                "similarity_score": float(sim),
+                                "distance": 1.0 - float(sim),
+                                "is_exact_match": False
+                            })
+            
+            # BƯỚC 3: Kết hợp kết quả - ưu tiên exact match trước
+            results = exact_match_products + similar_products
+            
+            # Giới hạn số lượng kết quả
+            if k > 0:
+                results = results[:k]
+            
+            logger.info(f"Search results: {len(exact_match_products)} exact matches, {len(similar_products)} similar products")
+            return results
+            
+        except Exception as e:
+            logger.error(f"Search from URL failed: {e}")
             return []
     
     def search_similar_products_by_text(self, query: str, k: int = 10) -> List[Dict[str, Any]]:
@@ -259,7 +404,7 @@ class SimpleFashionSearchEngine:
                             "name": product.get("name", "Unknown Product"),
                             "sale_price": product.get("price", 0),
                             "description": product.get("description", ""),
-                            "images": product.get("images", []),
+                            "images": product.get(settings.image_field, []),
                             "similarity_score": float(sim),
                             "distance": 1.0 - float(sim)
                         })
@@ -268,6 +413,42 @@ class SimpleFashionSearchEngine:
             
         except Exception as e:
             logger.error(f"Text search failed: {e}")
+            return []
+    
+    def search_similar_to_product(self, product_id: str, k: int = 10) -> List[Dict[str, Any]]:
+        """Search for products similar to a specific product by ID"""
+        try:
+            # Get the product by ID
+            product = self.mongo_manager.get_product_by_id(product_id)
+            if not product:
+                logger.warning(f"Product {product_id} not found")
+                return []
+            
+            # Check if product has images
+            images = product.get(settings.image_field, [])
+            if not images or len(images) == 0:
+                logger.warning(f"Product {product_id} has no images")
+                return []
+            
+            # Use the first image for search
+            image_url = images[0]
+            logger.info(f"Searching similar to product {product_id} using image: {image_url}")
+            
+            # Search using image URL
+            results = self.search_similar_products(image_url, k + 1)  # +1 to exclude the original product
+            
+            # Filter out the original product from results
+            filtered_results = []
+            for result in results:
+                if result.get("_id") != product_id:
+                    filtered_results.append(result)
+                    if len(filtered_results) >= k:
+                        break
+            
+            return filtered_results
+            
+        except Exception as e:
+            logger.error(f"Search similar to product failed: {e}")
             return []
     
     def get_index_stats(self) -> Dict[str, Any]:
