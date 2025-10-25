@@ -1,0 +1,150 @@
+.floating-image-search {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.floating-image-search-button {
+  pointer-events: auto;
+}
+
+.floating-image-search-button .image-search-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-image-search-button .image-search-button:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.floating-image-search-button .image-search-button:active {
+  transform: translateY(-1px) scale(1.05);
+}
+
+.floating-image-search-button .image-search-text {
+  display: none;
+}
+
+.floating-image-search-button .image-search-icon {
+  font-size: 28px;
+}
+
+/* Tooltip */
+.floating-image-search-button .image-search-button::before {
+  content: "Tìm kiếm bằng hình ảnh";
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+.floating-image-search-button .image-search-button::after {
+  content: "";
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+.floating-image-search-button .image-search-button:hover::before,
+.floating-image-search-button .image-search-button:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.8), 0 0 0 10px rgba(102, 126, 234, 0.1);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  }
+}
+
+.floating-image-search-button .image-search-button {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .floating-image-search {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .floating-image-search-button .image-search-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .floating-image-search-button .image-search-icon {
+    font-size: 24px;
+  }
+  
+  .floating-image-search-button .image-search-button::before {
+    right: 60px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .floating-image-search-button .image-search-button::after {
+    right: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-image-search {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .floating-image-search-button .image-search-button {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+  
+  .floating-image-search-button .image-search-icon {
+    font-size: 22px;
+  }
+}
