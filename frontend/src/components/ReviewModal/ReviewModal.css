@@ -1,0 +1,295 @@
+.review-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.review-modal {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.review-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 0 24px;
+  border-bottom: 1px solid #e9ecef;
+  margin-bottom: 24px;
+}
+
+.review-modal-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover:not(:disabled) {
+  background: #f8f9fa;
+  color: #495057;
+}
+
+.close-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.review-modal-content {
+  padding: 0 24px 24px 24px;
+}
+
+.product-info {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  border-left: 4px solid #FF8FAB;
+}
+
+.product-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0 0 8px 0;
+}
+
+.product-info p {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rating-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rating-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.star-rating {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.star {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  filter: grayscale(1);
+}
+
+.star.active {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+.star:hover:not(:disabled) {
+  transform: scale(1.15);
+}
+
+.star:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.rating-text {
+  font-size: 14px;
+  color: #6c757d;
+  font-style: italic;
+  min-height: 20px;
+}
+
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comment-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.comment-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.2s ease;
+}
+
+.comment-textarea:focus {
+  outline: none;
+  border-color: #FF8FAB;
+}
+
+.comment-textarea:disabled {
+  background: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.character-count {
+  font-size: 12px;
+  color: #6c757d;
+  text-align: right;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid #e9ecef;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 100px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-cancel {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+.btn-submit {
+  background: #FF8FAB;
+  color: white;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: #FF6B8A;
+  transform: translateY(-1px);
+}
+
+.btn-submit:disabled {
+  background: #dee2e6;
+  color: #6c757d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .review-modal {
+    margin: 10px;
+    max-width: calc(100% - 20px);
+  }
+  
+  .review-modal-header {
+    padding: 20px 20px 0 20px;
+  }
+  
+  .review-modal-content {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .review-modal-header h2 {
+    font-size: 20px;
+  }
+  
+  .star {
+    font-size: 28px;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-modal-overlay {
+    padding: 10px;
+  }
+  
+  .review-modal {
+    margin: 0;
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  
+  .star {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,299 @@
+.revenue-chart-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #F2F2F2;
+}
+
+.chart-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+}
+
+.chart-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background: #FAFAFA;
+  border-radius: 8px;
+  border-left: 4px solid #40A9FF;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 600;
+  color: #40A9FF;
+}
+
+.stat-value.revenue {
+  color: #40A9FF;
+}
+
+.stat-value.cost {
+  color: #FF8FAB;
+}
+
+.stat-value.profit {
+  color: #73D13D;
+}
+
+.chart-wrapper {
+  margin: 32px 0;
+  padding: 16px;
+  background: #FAFAFA;
+  border-radius: 8px;
+}
+
+.chart-loading,
+.chart-error,
+.chart-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.chart-error {
+  color: #FF4D4F;
+}
+
+.retry-btn {
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: #40A9FF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.retry-btn:hover {
+  background: #69C0FF;
+}
+
+.revenue-tooltip {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tooltip-label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.tooltip-value {
+  font-size: 14px;
+  color: #40A9FF;
+  font-weight: 500;
+  margin: 4px 0;
+}
+
+.tooltip-cost {
+  font-size: 14px;
+  color: #FF8FAB;
+  font-weight: 500;
+  margin: 4px 0;
+}
+
+.tooltip-profit {
+  font-size: 14px;
+  color: #73D13D;
+  font-weight: 500;
+  margin: 4px 0;
+}
+
+.tooltip-percentage {
+  font-size: 12px;
+  color: #666;
+  margin: 4px 0 0 0;
+}
+
+.chart-details {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 2px solid #F2F2F2;
+}
+
+.details-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+}
+
+.details-table {
+  overflow-x: auto;
+}
+
+.details-header {
+  display: grid;
+  grid-template-columns: 30px 2fr 1.5fr 1.5fr 1.5fr 1fr 1fr;
+  gap: 12px;
+  padding: 12px;
+  background: #F5F5F5;
+  border-radius: 8px 8px 0 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.header-cell {
+  text-align: left;
+}
+
+.header-cell.shop-name {
+  grid-column: 2;
+}
+
+.details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid #E5E5E5;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+.detail-item {
+  display: grid;
+  grid-template-columns: 30px 2fr 1.5fr 1.5fr 1.5fr 1fr 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 16px 12px;
+  background: #FAFAFA;
+  border-bottom: 1px solid #E5E5E5;
+  transition: background 0.2s ease;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item:hover {
+  background: #F0F0F0;
+}
+
+.detail-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.detail-shop-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.detail-revenue {
+  font-size: 14px;
+  font-weight: 600;
+  color: #40A9FF;
+}
+
+.detail-cost {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FF8FAB;
+}
+
+.detail-profit {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.detail-profit.positive {
+  color: #73D13D;
+}
+
+.detail-profit.negative {
+  color: #FF4D4F;
+}
+
+.detail-percentage {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  text-align: center;
+}
+
+.detail-orders {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .revenue-chart-container {
+    padding: 16px;
+  }
+
+  .chart-title {
+    font-size: 20px;
+  }
+
+  .chart-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .chart-wrapper {
+    margin: 24px 0;
+  }
+
+  .details-header,
+  .detail-item {
+    grid-template-columns: 20px 1.5fr 1fr 1fr 0.8fr 0.8fr;
+    font-size: 12px;
+  }
+
+  .header-cell.shop-name {
+    grid-column: 2;
+  }
+
+  .detail-shop-name,
+  .detail-revenue,
+  .detail-cost,
+  .detail-profit,
+  .detail-percentage,
+  .detail-orders {
+    font-size: 12px;
+  }
+}
+
